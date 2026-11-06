@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #05070a;
+        color: #f1f5f9;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* Tactile Water-Repel & Obsidian Glass System */
+    .water-repel {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%), rgba(11, 14, 20, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.16),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5),
+        0 12px 36px -8px rgba(0, 0, 0, 0.65);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .water-repel:hover {
+      border-color: rgba(255, 152, 56, 0.35);
+      box-shadow: 
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+        0 14px 40px -6px rgba(0, 0, 0, 0.8),
+        0 0 24px -4px rgba(255, 152, 56, 0.2);
+    }
+    
+    /* Hydrophobic Active Switch / Selected Pill */
+    .active-calc {
+      background: linear-gradient(145deg, rgba(255, 152, 56, 0.18) 0%, rgba(255, 131, 43, 0.08) 100%), #11141c !important;
+      border: 1px solid #ff9838 !important;
+      box-shadow: 
+        inset 0 1px 1.5px 0 rgba(255, 220, 195, 0.4),
+        0 0 20px -3px rgba(255, 152, 56, 0.35),
+        0 4px 16px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* Tactile Water Droplet Ripple Effect */
+    .ripple-target {
+      position: relative;
+      overflow: hidden;
+    }
+    .ripple-target .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 170, 85, 0.45) 0%, rgba(255, 152, 56, 0.15) 50%, rgba(255, 255, 255, 0) 75%);
+      transform: scale(0);
+      animation: water-ripple 0.65s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      pointer-events: none;
+    }
+    @keyframes water-ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Ambient Dew Drops Specular */
+    .specular-rim {
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 10px 30px -5px rgba(0,0,0,0.8);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#323539",
+            "primary-fixed": "#ffdcc3",
+            "inverse-on-surface": "#2e3134",
+            "background": "#05070a",
+            "tertiary-container": "#ff9759",
+            "inverse-primary": "#914d00",
+            "primary-container": "#ff9838",
+            "on-surface": "#f1f5f9",
+            "inverse-surface": "#e1e2e7",
+            "on-primary-fixed": "#2f1500",
+            "secondary-fixed": "#ffdcc3",
+            "surface-tint": "#ffb77d",
+            "surface-dim": "#05070a",
+            "on-tertiary-fixed": "#331200",
+            "on-primary-fixed-variant": "#6e3900",
+            "surface-container-low": "#0b0e14",
+            "on-secondary-fixed": "#2f1500",
+            "tertiary": "#ffbf9d",
+            "surface-bright": "#1a1f29",
+            "outline": "#475569",
+            "on-background": "#f1f5f9",
+            "primary": "#ff9838",
+            "on-primary-container": "#331500",
+            "surface": "#05070a",
+            "on-surface-variant": "#94a3b8",
+            "secondary": "#ffaa55",
+            "surface-container": "#11141c",
+            "on-tertiary-fixed-variant": "#773300",
+            "on-secondary-fixed-variant": "#773300",
+            "outline-variant": "#1e293b",
+            "tertiary-fixed": "#ffdbca",
+            "error-container": "#93000a",
+            "surface-container-high": "#161b24",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-secondary": "#4d2600",
+            "primary-fixed-dim": "#ffb77d",
+            "tertiary-fixed-dim": "#ffb68e",
+            "surface-container-lowest": "#030407",
+            "secondary-container": "#ff832b",
+            "on-tertiary": "#542200",
+            "surface-variant": "#11141c",
+            "on-secondary-container": "#3d1900",
+            "on-tertiary-container": "#723100",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-primary": "#2a1200",
+            "on-error-container": "#ffdad6"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "display-lg": ["Syne", "sans-serif"],
+            "body-lg": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"],
+            "title-lg": ["Space Grotesk", "sans-serif"],
+            "display-lg-mobile": ["Syne", "sans-serif"],
+            "body-sm": ["Space Grotesk", "sans-serif"],
+            "body-md": ["Space Grotesk", "sans-serif"],
+            "label-lg": ["Space Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Syne", "sans-serif"],
+            "title-md": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Syne", "sans-serif"],
+            "headline-md": ["Syne", "sans-serif"],
+            "display-xl": ["Syne", "sans-serif"],
+            "display-xl-mobile": ["Syne", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"]
+          },
+          fontSize: {
+            "display-xl": ["72px", { lineHeight: "78px", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "display-xl-mobile": ["40px", { lineHeight: "46px", letterSpacing: "-0.025em", fontWeight: "800" }],
+            "headline-lg": ["48px", { lineHeight: "54px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "38px", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-sm": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "title-lg": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "500" }],
+            "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen relative selection:bg-primary selection:text-on-primary antialiased">
+<!-- Ambient Obsidian Pitch-Black Glow Background -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+<div class="absolute -top-32 -left-20 w-[42rem] h-[42rem] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute top-1/4 -right-32 w-[38rem] h-[38rem] rounded-full bg-secondary-container/10 blur-[130px]"></div>
+<div class="absolute top-3/4 left-1/3 w-[46rem] h-[46rem] rounded-full bg-primary-container/10 blur-[140px]"></div>
+<div class="absolute inset-0 bg-radial from-transparent via-[#05070a]/60 to-[#05070a]"></div>
+<!-- Subtle tactile water ripple micro-texture -->
+<div class="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] opacity-35"></div>
+</div>
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-space-xs">
+<div class="h-20 rounded-full water-repel px-space-md lg:px-space-lg flex items-center justify-between border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.7)] backdrop-blur-2xl bg-[#0b0e14]/75">
+<div class="flex items-center gap-space-sm">
+<img alt="SD Pixel Studio Logo" class="h-8 w-auto object-contain brightness-125" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/>
+<span class="font-headline-md text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">SD Pixel Studio</span>
+</div>
+<nav class="hidden lg:flex items-center p-1.5 rounded-full bg-[#11141c]/80 border border-white/5 backdrop-blur-md gap-1">
+<a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-primary hover:bg-white/5 ripple-target" data-path="home" href="#">Home</a>
+<a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-primary hover:bg-white/5 ripple-target" data-path="portfolio" href="#">Portfolio</a>
+<a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-primary hover:bg-white/5 ripple-target" data-path="categories" href="#">Categories</a>
+<a class="px-space-md py-1.5 rounded-full text-primary bg-primary/10 border border-primary/30 shadow-[0_0_12px_rgba(255,152,56,0.2)] font-label-md text-label-md transition-all duration-200" data-path="services" href="#">Services</a>
+<a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-primary hover:bg-white/5 ripple-target" data-path="about" href="#">About</a>
+<a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-primary hover:bg-white/5 ripple-target" data-path="contact" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-space-sm">
+<a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#11141c]/90 border border-white/10 hover:border-primary/40 text-on-surface-variant hover:text-on-surface transition-all ripple-target" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">chat</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Inquire</span>
+</a>
+<a class="px-space-md py-2.5 rounded-full bg-gradient-to-r from-primary via-tertiary-container to-secondary hover:brightness-110 text-on-primary font-label-md text-label-md font-bold shadow-[0_4px_24px_rgba(255,152,56,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 ripple-target" data-path="contact" href="#">
+            Book Project
+          </a>
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="relative z-10 w-full pt-20 bg-transparent min-h-screen">
+<div class="flex flex-col w-full">
+<!-- Spatial Ambient Highlights -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 right-10 w-[36rem] h-[36rem] bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-1/3 -left-32 w-[42rem] h-[42rem] bg-secondary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Section 1: Hero Header Area -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-8 pb-space-lg">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#11141c]/90 border border-primary/30 shadow-[0_0_20px_rgba(255,152,56,0.2)] mb-6 water-repel">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#ff9838]"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">BESPOKE DESIGN DISCIPLINES · TRANSPARENT PRICING &amp; ESTIMATION</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-xl text-display-xl-mobile lg:text-display-xl text-on-surface tracking-tight font-extrabold mb-6">
+              Crafted Precision.<br/>
+<span class="bg-gradient-to-r from-primary via-secondary to-primary-fixed bg-clip-text text-transparent drop-shadow-[0_2px_18px_rgba(255,152,56,0.3)]">Tailored Scope.</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Calibrated visual engineering spanning ceremonial keepsakes, venture-scale brand identity systems, and viral digital media. Backed by guaranteed 24–48h expedited delivery and direct Firebase Cloud synchronized asset vaults.
+            </p>
+<!-- Quick Stats Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 w-full max-w-3xl">
+<div class="p-4 rounded-xl water-repel text-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold block drop-shadow-[0_0_10px_rgba(255,152,56,0.3)]">48h</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Default Turnaround</span>
+</div>
+<div class="p-4 rounded-xl water-repel text-center">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold block drop-shadow-[0_0_10px_rgba(255,170,85,0.3)]">100%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Infinite Vector Scale</span>
+</div>
+<div class="p-4 rounded-xl water-repel text-center">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold block drop-shadow-[0_0_10px_rgba(255,220,195,0.3)]">4K UHD</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Motion Reveal Assets</span>
+</div>
+<div class="p-4 rounded-xl water-repel text-center">
+<span class="font-headline-sm text-headline-sm text-tertiary-container font-bold block drop-shadow-[0_0_10px_rgba(255,151,89,0.3)]">256-Bit</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Firebase Vault Delivery</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Core Disciplines & Offerings (3 Pillars Bento) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold block mb-2">01 / DISCIPLINES CATALOG</span>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-bold">Curated Studio Tiers</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Structured scopes engineered for ceremonial royalty, corporate titans, and high-velocity digital streamers.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Tier 1: Ceremonial & Event Suites -->
+<div class="flex flex-col rounded-xl water-repel p-8 relative group overflow-hidden">
+<div class="w-full h-48 rounded-lg overflow-hidden mb-6 relative border border-white/10">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 filter brightness-90 group-hover:brightness-100" data-alt="Luxurious wedding invitation mockups with gold leaf foil, delicate Sanskrit typography, rich emerald background with soft optical glass caustics and pristine studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuD5Mkk-SNYITGAC1ck3GUqtjRhqJCschDpNr8mgEWjKufwqWwK4657D0rgwIqr4z-HQkxVzFEmwcMe4w8xziUcs8npSoGMSAQg-F6J5s47dDGHyIRO4gcyLgyW4Eb3ejTg_csg311G8PkHZvUu3LqJkG5PS8LWkVMbKIc-A8phIBfUrcE_-BHCXDOzAnSqSDRu0Vmq7fld7UQRPFmQiYwKoiW2g50r6qvv3RPgHE"/>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#0b0e14]/90 border border-primary/40 text-primary font-label-md text-label-md font-semibold backdrop-blur-md">
+                  Ceremonial
+                </div>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<h3 class="font-headline-md text-headline-sm text-on-surface font-bold">Event &amp; Wedding Suites</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$350</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+                Timeless bespoke digital stationery, engagement announcements, and housewarming keepsakes featuring gold foil vector press and motion renders.
+              </p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  4K Ultra-HD Motion MP4 Invitations
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Bilingual &amp; Sanskrit Calligraphy
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Print-Ready CMYK Foil Stamp Vector Files
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Direct RSVP Micro-landing Sync
+                </li>
+</ul>
+<button class="w-full py-3 px-4 rounded-full bg-[#161b24] hover:bg-primary/20 hover:border-primary/50 border border-white/10 text-on-surface font-label-md text-label-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 ripple-target" onclick="prefillCalculator('wedding')">
+<span>Configure Ceremonial Scope</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+<!-- Tier 2: Brand Identity & Vector Systems -->
+<div class="flex flex-col rounded-xl water-repel p-8 relative group overflow-hidden border-primary/40 shadow-[0_0_30px_rgba(255,152,56,0.15)]">
+<div class="absolute -top-24 -right-24 w-44 h-44 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="w-full h-48 rounded-lg overflow-hidden mb-6 relative border border-white/10">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 filter brightness-90 group-hover:brightness-100" data-alt="Minimalist architectural brand identity layout featuring clean geometric logos, embossed business stationery, cool blue tone glass artifacts and isometric vector grid cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACMvete8YgNhkc1plCvEb5-iAXtyqAav5luY6UOCMld1JzOcmeKIUqs3J0Wgxf0YUGf1ZwPs7KK6pu5dQfVa0bNq5UnDxvhU0v4_3jzuNTVPWrIXJSE8T1QLJJhRWO83pW1FtjDf8vJf8dQLp7ErQZRvPir8bDHQmu6_DGQSHwaGV_dhcMGMeKmbTAPUpa8A_60Du2XO9hwV58PucwYSlJMzYX1vF25scd3VOFCtU"/>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-md text-label-md font-bold shadow-[0_0_12px_rgba(255,152,56,0.5)]">
+                  Flagship Core
+                </div>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<h3 class="font-headline-md text-headline-sm text-on-surface font-bold">Brand Identity &amp; Vectors</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$650</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+                Comprehensive corporate design architectures, dynamic esports mascots, and high-impact design tokens crafted for venture-backed founders.
+              </p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Vector Logo Mark (SVG, AI, EPS, PDF, CDR)
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  40+ Page Brand Guideline Manual
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Photorealistic 3D Corporate Mockup Suite
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Full Worldwide Commercial Rights IP Transfer
+                </li>
+</ul>
+<button class="w-full py-3 px-4 rounded-full bg-gradient-to-r from-primary to-tertiary-container hover:brightness-110 text-on-primary font-label-md text-label-md font-bold transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(255,152,56,0.35)] ripple-target" onclick="prefillCalculator('brand')">
+<span>Configure Brand Scope</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Tier 3: High-CTR Digital & Content Engineering -->
+<div class="flex flex-col rounded-xl water-repel p-8 relative group overflow-hidden">
+<div class="w-full h-48 rounded-lg overflow-hidden mb-6 relative border border-white/10">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 filter brightness-90 group-hover:brightness-100" data-alt="Vibrant esports Twitch stream overlays, dynamic YouTube thumbnail collage with high contrast lighting, glowing cyan typography, and optical particle bursts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCANiuwGF39SypLyCPHiQMJ62CaJepncQ8BGoZ9VwKzNb4Eon-vU1957hvzR-Plwzj5HZSkMhQFRlRqlyYp_x7ZYF2FFXbOtLoI1RreLBkxFJTcLj59wbHQPP5EhCpJ7XXclVpVoEkX1WTAGiOK8Df0i2tcEdwMw0Pd0bdpuBb1Psfc8xlGW2k2oArLzikYspCy0tDTLHsK2LSUD_9GlvxHAoyFGakK0F7MzGh1A5E"/>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#0b0e14]/90 border border-secondary/40 text-secondary font-label-md text-label-md font-semibold backdrop-blur-md">
+                  Viral Growth
+                </div>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<h3 class="font-headline-md text-headline-sm text-on-surface font-bold">High-CTR Digital Media</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$180</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+                Psychologically optimized YouTube thumbnails, streaming HUD overlays, animated web banners, and conversion-engineered ad creatives.
+              </p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  A/B Cognitive Psychological Thumbnails (3-Pack)
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  OBS/Twitch Animated Stream Packages
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Performance Social Ads (Meta, X, TikTok)
+                </li>
+<li class="flex items-center gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                  Sub-24h Flash Production Available
+                </li>
+</ul>
+<button class="w-full py-3 px-4 rounded-full bg-[#161b24] hover:bg-primary/20 hover:border-primary/50 border border-white/10 text-on-surface font-label-md text-label-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 ripple-target" onclick="prefillCalculator('digital')">
+<span>Configure Content Scope</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 3: Interactive Liquid Quote & Turnaround Calculator -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl" id="quote-calculator">
+<div class="rounded-2xl water-repel p-6 lg:p-12 relative overflow-hidden bg-[#0b0e14]/90 border border-white/10">
+<div class="max-w-3xl mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/40 text-primary mb-3 shadow-[0_0_15px_rgba(255,152,56,0.15)]">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Dynamic Studio Estimation Engine</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-bold">
+                Interactive Scope &amp; Fee Architect
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Toggle disciplines, turnaround urgency, and auxiliary assets for a deterministic real-time studio quote with hydrophobic live updates.
+              </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- Left Configuration Controls (7 cols) -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Step 1: Discipline -->
+<div>
+<label class="block font-label-lg text-label-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[11px] flex items-center justify-center font-bold shadow-[0_0_8px_#ff9838]">1</span>
+                    Primary Discipline
+                  </label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="discipline-group">
+<button class="calc-btn active-calc ripple-target text-left p-4 rounded-xl water-repel flex flex-col justify-between" data-base="350" data-name="Ceremonial Event Suite" data-type="discipline" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Ceremonial &amp; Wedding</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">4K Motion + Foil Vector ($350)</span>
+</button>
+<button class="calc-btn ripple-target text-left p-4 rounded-xl water-repel flex flex-col justify-between" data-base="650" data-name="Brand Identity System" data-type="discipline" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Brand Identity System</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Corporate / Mascot ($650)</span>
+</button>
+<button class="calc-btn ripple-target text-left p-4 rounded-xl water-repel flex flex-col justify-between" data-base="180" data-name="High-CTR Content Pack" data-type="discipline" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-surface">YouTube &amp; Stream Growth</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Thumbnails &amp; Overlays ($180)</span>
+</button>
+<button class="calc-btn ripple-target text-left p-4 rounded-xl water-repel flex flex-col justify-between" data-base="850" data-name="Custom Hybrid Suite" data-type="discipline" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Custom Hybrid Suite</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Full-stack multi-format ($850)</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Complexity Tier -->
+<div>
+<label class="block font-label-lg text-label-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[11px] flex items-center justify-center font-bold shadow-[0_0_8px_#ff9838]">2</span>
+                    Scope Complexity &amp; Revisions
+                  </label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="complexity-group">
+<button class="calc-complexity ripple-target text-left p-4 rounded-xl water-repel" data-multiplier="1.0" data-name="Essential Proof" data-type="complexity" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Essential Proof</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">2 initial concepts, 2 revision rounds</div>
+</button>
+<button class="calc-complexity active-calc ripple-target text-left p-4 rounded-xl water-repel" data-multiplier="1.35" data-name="Studio Standard" data-type="complexity" type="button">
+<div class="font-label-md text-label-md font-semibold text-primary">Studio Standard</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">4 concepts, raw project files included</div>
+</button>
+<button class="calc-complexity ripple-target text-left p-4 rounded-xl water-repel" data-multiplier="1.8" data-name="Master Suite" data-type="complexity" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Master Suite</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Unlimited iterations, priority director sync</div>
+</button>
+</div>
+</div>
+<!-- Step 3: Turnaround Urgency -->
+<div>
+<label class="block font-label-lg text-label-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[11px] flex items-center justify-center font-bold shadow-[0_0_8px_#ff9838]">3</span>
+                    Production Velocity
+                  </label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="speed-group">
+<button class="calc-speed ripple-target text-left p-4 rounded-xl water-repel" data-fee="0" data-time="4–5 Studio Days" data-type="speed" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Standard Flow</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">4–5 Business Days (+$0)</div>
+</button>
+<button class="calc-speed active-calc ripple-target text-left p-4 rounded-xl water-repel" data-fee="120" data-time="Guaranteed 48 Hours" data-type="speed" type="button">
+<div class="font-label-md text-label-md font-semibold text-primary">Express 48h</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Fast-track queue (+$120)</div>
+</button>
+<button class="calc-speed ripple-target text-left p-4 rounded-xl water-repel" data-fee="250" data-time="Ultra-Rush 24 Hours VIP" data-type="speed" type="button">
+<div class="font-label-md text-label-md font-semibold text-secondary">Ultra 24h VIP</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Emergency release (+$250)</div>
+</button>
+</div>
+</div>
+<!-- Step 4: Auxiliary Add-ons -->
+<div>
+<label class="block font-label-lg text-label-lg font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[11px] flex items-center justify-center font-bold shadow-[0_0_8px_#ff9838]">4</span>
+                    Auxiliary Enhancements
+                  </label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="flex items-center justify-between p-3.5 rounded-xl water-repel cursor-pointer hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0 bg-[#11141c] border-white/20 checked:bg-primary accent-primary" id="addon-motion" type="checkbox" value="150"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">3D Motion Reveal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4K Logo/Invite Animation</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">+$150</span>
+</label>
+<label class="flex items-center justify-between p-3.5 rounded-xl water-repel cursor-pointer hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0 bg-[#11141c] border-white/20 checked:bg-primary accent-primary" id="addon-print" type="checkbox" value="80"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">CMYK Master Print Pack</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Spot UV &amp; Foil Press Vectors</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">+$80</span>
+</label>
+<label class="flex items-center justify-between p-3.5 rounded-xl water-repel cursor-pointer hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0 bg-[#11141c] border-white/20 checked:bg-primary accent-primary" id="addon-bilingual" type="checkbox" value="60"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Sanskrit / Bilingual Calligraphy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Handcrafted Devanagari Glyphs</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">+$60</span>
+</label>
+<label class="flex items-center justify-between p-3.5 rounded-xl water-repel cursor-pointer hover:border-primary/40 transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0 bg-[#11141c] border-white/20 checked:bg-primary accent-primary" id="addon-whatsapp" type="checkbox" value="0"/>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">WhatsApp VIP Direct Hotline</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time studio designer ping</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-semibold uppercase text-secondary">Free</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Live Glass Calculation Sheet (5 cols) -->
+<div class="lg:col-span-5 sticky top-28">
+<div class="rounded-2xl water-repel p-6 lg:p-8 relative overflow-hidden bg-[#11141c]/95 border-primary/30 shadow-[0_0_40px_rgba(255,152,56,0.18)]">
+<div class="absolute top-0 right-0 w-36 h-36 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Live Hydro-Calibration</span>
+<span class="px-3 py-1 rounded-full bg-primary/15 border border-primary/40 text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-[0_0_10px_rgba(255,152,56,0.2)]" id="turnaround-badge">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+                      Guaranteed 48 Hours
+                    </span>
+</div>
+<!-- Price Counter Display -->
+<div class="py-4 my-2 border-y border-white/10">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Estimated Investment:</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-headline-lg lg:text-display-xl text-on-surface font-extrabold tracking-tight drop-shadow-[0_2px_12px_rgba(255,152,56,0.25)]" id="quote-price-usd">$672</span>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">USD</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<span>Approx. <strong class="text-on-surface" id="quote-price-inr">₹56,400 INR</strong></span>
+<span>· Tax-inclusive invoice</span>
+</div>
+</div>
+<!-- Itemized Receipt Specs -->
+<div class="space-y-3 py-4 bg-[#05070a]/70 rounded-xl p-4 my-4 border border-white/5">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Discipline Tier:</span>
+<span class="font-semibold text-on-surface text-right" id="summary-discipline">Ceremonial Event Suite</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Scope Tier:</span>
+<span class="font-semibold text-on-surface text-right" id="summary-complexity">Studio Standard (1.35x)</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Production Speed:</span>
+<span class="font-semibold text-primary text-right" id="summary-speed">Express 48h (+ $120)</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Active Add-ons:</span>
+<span class="font-semibold text-on-surface text-right" id="summary-addons">CMYK Print Pack</span>
+</div>
+</div>
+<!-- Guarantee Micro-Pill -->
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mb-6">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Protected by SD Pixel 100% Precision Guarantee</span>
+</div>
+<!-- Action CTAs -->
+<div class="space-y-3">
+<a class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-primary via-tertiary-container to-secondary hover:brightness-110 text-on-primary font-label-lg text-label-lg font-bold shadow-[0_4px_25px_rgba(255,152,56,0.4)] transition-all flex items-center justify-center gap-2 ripple-target" href="https://wa.me/?text=Hello%20SD%20Pixel%20Studio!%20I%20configured%20a%20quote%20for%20a%20project." id="btn-whatsapp-inquiry" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Lock Estimate via WhatsApp VIP</span>
+</a>
+<a class="w-full py-3 px-6 rounded-full bg-[#161b24] hover:bg-white/10 text-on-surface border border-white/10 font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2 ripple-target" href="#consultation-form">
+<span>Submit Detailed Studio Brief</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_downward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Studio Direct Inquiry & Brief Glass Form -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl" id="consultation-form">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg">
+<!-- Context & Workflow Details (4 cols) -->
+<div class="lg:col-span-4 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+                02 / PROJECT INTAKE
+              </div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-bold">
+                Formal Studio Briefing
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Initiate direct creative collaboration. Your submission triggers instantaneous lead dispatch into our encrypted Firebase Studio workspace, with a dedicated art director assigned within 2 hours.
+              </p>
+<div class="p-6 rounded-xl water-repel space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Non-Disclosure Bound</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">All proprietary concepts, unreleased names, and event data remain confidential under strict studio NDAs.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">cloud_sync</span>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Cloud Asset Vault</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Automated persistent Google Cloud / Firebase repository access with lifetime redownloads.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[24px]">forum</span>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">No Middlemen</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Direct interaction with senior vector illustrators and motion animators via WhatsApp.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Glass Intake Form Container (8 cols) -->
+<div class="lg:col-span-8">
+<form class="rounded-2xl water-repel p-8 lg:p-10 space-y-6 bg-[#0b0e14]/90 border border-white/10" onsubmit="handleFormSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="client-name">Your Full Name / Entity *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-[#11141c] border border-white/10 focus:border-primary text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="client-name" placeholder="e.g. Maya Chen or Studio Vertex" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="client-email">Corporate or Personal Email *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-[#11141c] border border-white/10 focus:border-primary text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="client-email" placeholder="name@domain.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="client-phone">WhatsApp Number (with Country Code) *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-[#11141c] border border-white/10 focus:border-primary text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="client-phone" placeholder="+1 555 234 5678 or +91 98765 43210" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="target-date">Target Launch / Event Date</label>
+<input class="w-full px-4 py-3 rounded-lg bg-[#11141c] border border-white/10 focus:border-primary text-on-surface text-body-md focus:outline-none focus:ring-1 focus:ring-primary transition-all text-slate-300 [color-scheme:dark]" id="target-date" type="date"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2" for="project-vision">Project Vision &amp; Deliverable Specifications *</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-[#11141c] border border-white/10 focus:border-primary text-on-surface placeholder:text-outline text-body-md focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="project-vision" placeholder="Describe your aesthetic inspirations, visual references, dimensions, required language text (e.g. English + Sanskrit), and primary media applications..." required="" rows="4"></textarea>
+</div>
+<!-- Drag & Drop Moodboard Zone -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-2">Reference Moodboards, Vector Sketches or Brand Kit</label>
+<div class="p-8 rounded-xl water-repel bg-[#05070a]/60 hover:border-primary/50 text-center transition-all cursor-pointer relative group ripple-target" id="dropzone">
+<input class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" id="file-input" multiple="" onchange="handleFileChange(this)" type="file"/>
+<span class="material-symbols-outlined text-[40px] text-primary group-hover:scale-110 transition-transform">cloud_upload</span>
+<p class="font-label-lg text-label-lg font-semibold text-on-surface mt-2">
+                      Drop reference files here or click to browse
+                    </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="file-status">
+                      Supports PDF, AI, PSD, PNG, MP4, Figma Links up to 100MB
+                    </p>
+</div>
+</div>
+<!-- Security Footnote & Form Submit -->
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">encrypted</span>
+<span>AES-256 Storage · Authorized Studio Dispatch</span>
+</div>
+<button class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-[0_4px_20px_rgba(255,152,56,0.35)] hover:brightness-110 transition-all transform hover:-translate-y-0.5 ripple-target" type="submit">
+                    Transmit Studio Brief →
+                  </button>
+</div>
+<!-- Inline Success Alert -->
+<div class="hidden p-4 rounded-xl bg-primary/10 border border-primary/40 text-on-surface flex items-center gap-3" id="form-success">
+<span class="material-symbols-outlined text-primary text-[24px]">task_alt</span>
+<div>
+<strong class="font-label-md text-label-md text-primary block">Brief Transmitted Successfully</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Your estimate and specifications have been indexed in our Obsidian locker. We will ping your WhatsApp shortly.</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Section 5: Studio Guarantees & Accordion FAQ -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold block mb-2">03 / CERTAINTY &amp; PROTOCOLS</span>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-bold">Uncompromising Standards</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Everything you need to know about SD Pixel Studio's delivery velocity and artistic fidelity.</p>
+</div>
+<!-- Guarantees 4-Pack Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="p-6 rounded-xl water-repel">
+<div class="w-10 h-10 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center text-primary mb-4 shadow-[0_0_12px_rgba(255,152,56,0.25)]">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface mb-1">Infinite Vector Fidelity</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every emblem and monogram is generated mathematically in raw vectors, scalable from a watch screen to a 90-foot billboard.</p>
+</div>
+<div class="p-6 rounded-xl water-repel">
+<div class="w-10 h-10 rounded-full bg-secondary/15 border border-secondary/40 flex items-center justify-center text-secondary mb-4 shadow-[0_0_12px_rgba(255,170,85,0.25)]">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface mb-1">Strict 48h Turnaround</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">No vague agency timelines. Our streamlined liquid workflow delivers first-round proofs within 48 business hours or less.</p>
+</div>
+<div class="p-6 rounded-xl water-repel">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/15 border border-primary-fixed/40 flex items-center justify-center text-primary-fixed mb-4 shadow-[0_0_12px_rgba(255,220,195,0.2)]">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface mb-1">Full Intellectual Property</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Upon final proof sign-off and balance settlement, complete trademark copyright and source files transfer to you.</p>
+</div>
+<div class="p-6 rounded-xl water-repel">
+<div class="w-10 h-10 rounded-full bg-[#161b24] border border-white/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">folder_special</span>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface mb-1">Permanent Firebase Storage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lose your files two years down the line? Your encrypted asset locker remains mirrored and permanently accessible.</p>
+</div>
+</div>
+<!-- FAQ Accordions -->
+<div class="max-w-3xl mx-auto space-y-3">
+<details class="group rounded-xl water-repel p-5 cursor-pointer border border-white/10 hover:border-primary/40 transition-colors">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-semibold list-none">
+<span>What formats do you deliver for Ceremonial Wedding invitations?</span>
+<span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                We provide a 4K UHD Motion MP4 formatted specifically for seamless WhatsApp, Instagram, and web playback with licensed acoustic orchestrations, along with CMYK press-ready PDFs, AI master vectors, and individual page JPGs configured for foil embossing.
+              </div>
+</details>
+<details class="group rounded-xl water-repel p-5 cursor-pointer border border-white/10 hover:border-primary/40 transition-colors">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-semibold list-none">
+<span>How does the WhatsApp VIP hotline collaboration work?</span>
+<span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Unlike traditional design agencies with slow ticket portals, your project is assigned to a direct private WhatsApp broadcast channel. You can send instant voice notes, sketch markups, and receive live progress renders without friction.
+              </div>
+</details>
+<details class="group rounded-xl water-repel p-5 cursor-pointer border border-white/10 hover:border-primary/40 transition-colors">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-semibold list-none">
+<span>Can I request custom bilingual typography (e.g., Hindi, Gujarati, Tamil)?</span>
+<span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Yes. Our lead calligraphers specialize in Vedic, Sanskrit, Devanagari, and South Asian regional scripts harmonized seamlessly alongside contemporary English typography.
+              </div>
+</details>
+<details class="group rounded-xl water-repel p-5 cursor-pointer border border-white/10 hover:border-primary/40 transition-colors">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-semibold list-none">
+<span>What payment terms and currencies do you support?</span>
+<span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                We operate on a transparent 50% mobilization deposit and 50% upon final master asset sign-off. We accept USD, INR (UPI / IMPS), EUR, and GBP via Stripe, Wire Transfer, and Razorpay.
+              </div>
+</details>
+</div>
+</section>
+<!-- Section 6: Direct Visual Showcase Grid (Asymmetric) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-lg">
+<div class="rounded-2xl water-repel p-8 lg:p-12 relative overflow-hidden bg-gradient-to-br from-[#11141c] to-[#05070a] border border-primary/30 shadow-[0_0_35px_rgba(255,152,56,0.15)]">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">READY TO COMMENCE?</span>
+<h3 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-on-surface font-bold mt-1">
+                  Elevate your visual legacy today.
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                  Our studio queue is managed dynamically to safeguard output precision. Connect instantly with an art director to lock your slot.
+                </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<a class="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary hover:brightness-110 text-on-primary font-label-lg text-label-lg font-bold shadow-[0_4px_24px_rgba(255,152,56,0.4)] transition-all flex items-center gap-2 ripple-target" href="https://wa.me/?text=Hi%20SD%20Pixel%20Studio,%20I%20would%20like%20to%20discuss%20a%20priority%20design%20project." target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Open WhatsApp Direct</span>
+</a>
+<a class="px-6 py-3.5 rounded-full water-repel hover:bg-white/10 text-on-surface font-label-md text-label-md font-semibold transition-all ripple-target" href="#quote-calculator">
+                  Recalculate Estimate
+                </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Script for Dynamic Quote Calculator & Water Ripple Effect -->
+<script>
+      // Water Ripple Click Effect Generator
+      document.addEventListener('click', function (e) {
+        const target = e.target.closest('.ripple-target, .calc-btn, .calc-complexity, .calc-speed, button');
+        if (!target) return;
+
+        const rect = target.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+
+        target.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 700);
+      });
+
+      // Dynamic Quote Calculator State
+      const calcState = {
+        basePrice: 350,
+        disciplineName: 'Ceremonial Event Suite',
+        complexityMultiplier: 1.35,
+        complexityName: 'Studio Standard (1.35x)',
+        speedFee: 120,
+        speedTime: 'Guaranteed 48 Hours',
+        addonsTotal: 80,
+        activeAddonsList: ['CMYK Print Pack']
+      };
+
+      const exchangeRateUSDToINR = 84;
+
+      function updateCalculatorUI() {
+        const rawTotal = Math.round((calcState.basePrice * calcState.complexityMultiplier) + calcState.speedFee + calcState.addonsTotal);
+        const inrTotal = Math.round(rawTotal * exchangeRateUSDToINR);
+
+        const priceUsdEl = document.getElementById('quote-price-usd');
+        const priceInrEl = document.getElementById('quote-price-inr');
+        const badgeEl = document.getElementById('turnaround-badge');
+        const discEl = document.getElementById('summary-discipline');
+        const compEl = document.getElementById('summary-complexity');
+        const speedEl = document.getElementById('summary-speed');
+        const addonsEl = document.getElementById('summary-addons');
+        const waBtn = document.getElementById('btn-whatsapp-inquiry');
+
+        if (priceUsdEl) priceUsdEl.textContent = '$' + rawTotal;
+        if (priceInrEl) priceInrEl.textContent = '₹' + inrTotal.toLocaleString('en-IN') + ' INR';
+        if (badgeEl) badgeEl.innerHTML = `<span class="material-symbols-outlined text-[14px]">bolt</span> ${calcState.speedTime}`;
+        if (discEl) discEl.textContent = calcState.disciplineName;
+        if (compEl) compEl.textContent = calcState.complexityName;
+        if (speedEl) speedEl.textContent = `${calcState.speedTime} (+ $${calcState.speedFee})`;
+        if (addonsEl) {
+          addonsEl.textContent = calcState.activeAddonsList.length > 0 
+            ? calcState.activeAddonsList.join(', ') 
+            : 'None selected';
+        }
+
+        if (waBtn) {
+          const msg = encodeURIComponent(`Hello SD Pixel Studio! I generated an estimate: ${calcState.disciplineName} (${calcState.complexityName}) with ${calcState.speedTime}. Estimated Investment: $${rawTotal} USD (approx ₹${inrTotal.toLocaleString('en-IN')}). Can we review availability?`);
+          waBtn.href = `https://wa.me/?text=${msg}`;
+        }
+      }
+
+      // Setup Discipline click handlers
+      document.querySelectorAll('#discipline-group button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#discipline-group button').forEach(b => {
+            b.classList.remove('active-calc');
+          });
+          btn.classList.add('active-calc');
+          
+          calcState.basePrice = parseFloat(btn.dataset.base);
+          calcState.disciplineName = btn.dataset.name;
+          updateCalculatorUI();
+        });
+      });
+
+      // Setup Complexity click handlers
+      document.querySelectorAll('#complexity-group button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#complexity-group button').forEach(b => {
+            b.classList.remove('active-calc');
+            const title = b.querySelector('.font-label-md');
+            if (title) title.classList.remove('text-primary');
+          });
+          btn.classList.add('active-calc');
+          const title = btn.querySelector('.font-label-md');
+          if (title) title.classList.add('text-primary');
+
+          calcState.complexityMultiplier = parseFloat(btn.dataset.multiplier);
+          calcState.complexityName = btn.dataset.name + ` (${btn.dataset.multiplier}x)`;
+          updateCalculatorUI();
+        });
+      });
+
+      // Setup Speed click handlers
+      document.querySelectorAll('#speed-group button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#speed-group button').forEach(b => {
+            b.classList.remove('active-calc');
+          });
+          btn.classList.add('active-calc');
+
+          calcState.speedFee = parseFloat(btn.dataset.fee);
+          calcState.speedTime = btn.dataset.time;
+          updateCalculatorUI();
+        });
+      });
+
+      // Setup Addon Checkboxes
+      function recalculateAddons() {
+        let total = 0;
+        const list = [];
+        const motion = document.getElementById('addon-motion');
+        const print = document.getElementById('addon-print');
+        const bi = document.getElementById('addon-bilingual');
+
+        if (motion && motion.checked) {
+          total += 150;
+          list.push('3D Motion Reveal');
+        }
+        if (print && print.checked) {
+          total += 80;
+          list.push('CMYK Print Pack');
+        }
+        if (bi && bi.checked) {
+          total += 60;
+          list.push('Bilingual Calligraphy');
+        }
+
+        calcState.addonsTotal = total;
+        calcState.activeAddonsList = list;
+        updateCalculatorUI();
+      }
+
+      ['addon-motion', 'addon-print', 'addon-bilingual', 'addon-whatsapp'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', recalculateAddons);
+      });
+
+      // External Tier shortcut trigger
+      function prefillCalculator(tier) {
+        const quoteSec = document.getElementById('quote-calculator');
+        if (quoteSec) quoteSec.scrollIntoView({ behavior: 'smooth' });
+
+        const buttons = document.querySelectorAll('#discipline-group button');
+        if (tier === 'wedding' && buttons[0]) buttons[0].click();
+        if (tier === 'brand' && buttons[1]) buttons[1].click();
+        if (tier === 'digital' && buttons[2]) buttons[2].click();
+      }
+
+      // Handle Form Submission
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const successBox = document.getElementById('form-success');
+        if (successBox) {
+          successBox.classList.remove('hidden');
+          setTimeout(() => {
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        }
+      }
+
+      function handleFileChange(input) {
+        const status = document.getElementById('file-status');
+        if (input.files && input.files.length > 0) {
+          status.textContent = `${input.files.length} asset(s) staged: ` + Array.from(input.files).map(f => f.name).join(', ');
+          status.classList.add('text-primary', 'font-semibold');
+        }
+      }
+
+      // Initial render calibration
+      document.addEventListener('DOMContentLoaded', () => {
+        updateCalculatorUI();
+      });
+      updateCalculatorUI();
+    </script>
+</main>
+<!-- Footer -->
+<footer class="relative z-10 w-full bg-[#05070a] border-t border-white/10 mt-space-xl backdrop-blur-2xl">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter lg:gap-gutter-lg">
+<div class="md:col-span-6 space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<img alt="SD Pixel Studio Logo" class="h-7 w-auto object-contain brightness-125" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/>
+<span class="font-headline-md text-headline-sm text-on-surface font-bold">SD Pixel Studio</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Ethereal obsidian craft studio delivering bespoke optical interactions, brand experiences, and cutting-edge visual design systems with hydrophobic water-repel precision.
+          </p>
+</div>
+<div class="md:col-span-3 space-y-space-xs">
+<div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Connect</div>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span>Instagram
+            </a>
+<a class="hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">smart_display</span>YouTube
+            </a>
+<a class="hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">forum</span>WhatsApp Channel
+            </a>
+</div>
+</div>
+<div class="md:col-span-3 space-y-space-xs">
+<div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Studio Inquiries</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ready to engineer sensory fluid experiences? Let's curate your upcoming digital release.</p>
+<a class="inline-block font-label-md text-label-md text-primary hover:underline transition-colors" data-path="contact" href="#">hello@sdpixelstudio.com →</a>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-md text-label-md text-on-surface-variant">
+<p>© 2025 SD Pixel Studio. All rights reserved. Obsidian Water-Repel Creative Arts.</p>
+<div class="flex items-center gap-space-md">
+<a class="px-3 py-1 rounded-full bg-[#11141c] hover:bg-[#161b24] border border-white/10 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm tracking-wider uppercase transition-colors flex items-center gap-1.5" data-path="admin-portal" href="#">
+<span class="material-symbols-outlined text-[14px]">lock</span>/admin
+          </a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

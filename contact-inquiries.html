@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#3d0026", "on-primary-fixed": "#001d31", "error-container": "#ffdad6", "on-tertiary-fixed": "#001e2c", "surface-container-lowest": "#ffffff", "tertiary-container": "#007da9", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "error": "#ba1a1a", "on-background": "#131b2e", "surface": "#faf8ff", "surface-container-highest": "#dae2fd", "inverse-surface": "#283044", "inverse-primary": "#93ccff", "background": "#faf8ff", "secondary": "#a43073", "secondary-fixed": "#ffd8e7", "primary-fixed-dim": "#93ccff", "on-surface-variant": "#3f4850", "on-primary-fixed-variant": "#004b73", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffafd3", "on-secondary-fixed-variant": "#85145a", "on-tertiary-fixed-variant": "#004c69", "tertiary-fixed": "#c4e7ff", "tertiary-fixed-dim": "#7bd0ff", "on-error": "#ffffff", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-container": "#fcfcff", "on-surface": "#131b2e", "surface-container-high": "#e2e7ff", "primary-fixed": "#cce5ff", "on-error-container": "#93000a", "secondary-container": "#fc79bd", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-secondary": "#ffffff", "on-secondary-container": "#76014e", "outline": "#707881", "primary": "#006194", "tertiary": "#006387", "surface-tint": "#006398", "on-primary-container": "#fdfcff", "primary-container": "#007bb9", "surface-container": "#eaedff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "gutter-sm": "1rem", "gutter-lg": "2rem", "space-xs": "0.375rem", "margin-desktop": "4rem", "space-lg": "2rem", "margin": "2rem", "space-sm": "0.75rem", "space-xl": "3.5rem", "margin-mobile": "1.25rem", "space-md": "1.25rem" }, "fontFamily": { "display-xl-mobile": [ "Syne" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Syne" ], "body-md": [ "Plus Jakarta Sans" ], "display-xl": [ "Syne" ], "label-lg": [ "Inter" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Syne" ], "label-md": [ "Inter" ], "label-sm": [ "Inter" ], "headline-md": [ "Syne" ] }, "fontSize": { "display-xl-mobile": [ "40px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "800" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-xl": [ "72px", { "lineHeight": "78px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-sm": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "48px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "headline-md": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none overflow-hidden z-0"><div class="absolute -top-32 -left-20 w-[42rem] h-[42rem] rounded-full bg-primary-fixed/35 blur-3xl"></div><div class="absolute top-1/4 -right-32 w-[38rem] h-[38rem] rounded-full bg-secondary-fixed/30 blur-3xl"></div><div class="absolute top-3/4 left-1/3 w-[46rem] h-[46rem] rounded-full bg-tertiary-fixed/30 blur-3xl"></div><div class="absolute inset-0 bg-radial from-transparent via-surface/40 to-surface/80"></div></div><header class="fixed top-0 inset-x-0 z-50 transition-all duration-300"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-space-xs"><div class="h-20 rounded-full bg-surface-container-lowest/70 backdrop-blur-xl px-space-md lg:px-space-lg flex items-center justify-between shadow-[0_8px_32px_-4px_rgba(19,27,46,0.06),0_2px_8px_-2px_rgba(19,27,46,0.03)]"><div class="flex items-center gap-space-sm"><img alt="SD Pixel Studio Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/><span class="font-headline-md text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">SD Pixel Studio</span></div><nav class="hidden lg:flex items-center p-1.5 rounded-full bg-surface-container-high/60 backdrop-blur-md gap-1" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_4px_16px_rgba(0,97,148,0.12)] font-semibold"><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="home" href="#">Home</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="portfolio" href="#">Portfolio</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="categories" href="#">Categories</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="services" href="#">Services</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="about" href="#">About</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high/70 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined text-[16px] text-tertiary">chat</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Inquire</span></a><a class="px-space-md py-2.5 rounded-full bg-gradient-to-r from-primary to-tertiary-container hover:from-primary-container hover:to-tertiary text-on-primary font-label-md text-label-md shadow-[0_8px_20px_-4px_rgba(0,97,148,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" data-path="contact" href="#">Book Project</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Field (Contained to section) -->
+<section class="relative overflow-hidden px-margin-mobile lg:px-margin-desktop pt-space-md pb-space-lg">
+<div class="max-w-7xl mx-auto">
+<!-- Top Eyebrow Status Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-md">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-xl shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Direct Studio Dispatch · Global Commission Intake</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/50 backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed font-semibold tracking-wide">Calendar Open for Q2 &amp; Q3 Commissions</span>
+</div>
+</div>
+<!-- Editorial Typography Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-end mb-space-xl">
+<div class="lg:col-span-8 space-y-space-xs">
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary font-semibold">Concierge &amp; Architectural Intake</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">Initiate Your Visual Legacy.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect directly with our lead creative architects and digital artisans. We calibrate optic physics, crystalline identity systems, and cinematic digital craft for visionary brands.</p>
+</div>
+<div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-2">
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/80 text-on-surface font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span>Average Dispatch Response: <strong class="text-primary font-semibold">&lt; 14 Mins</strong></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Global AES-256 Encrypted Protocol</p>
+</div>
+</div>
+<!-- Quick Action Glass Conduit Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- WhatsApp VIP -->
+<a class="group relative rounded-xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="https://wa.me/919800000000" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary uppercase font-bold">&lt; 15m SLA</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">WhatsApp VIP</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Direct encrypted mobile liaison with lead designers.</p>
+<div class="flex items-center gap-1 font-label-md text-label-md text-primary font-semibold group-hover:gap-2 transition-all">
+<span>Open Direct Chat</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</a>
+<!-- Art Director Email -->
+<a class="group relative rounded-xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="mailto:hello@sdpixelstudio.com">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary uppercase font-bold">PGP Keyed</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Art Director Desk</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">hello@sdpixelstudio.com for formal RFCs &amp; RFPs.</p>
+<div class="flex items-center gap-1 font-label-md text-label-md text-tertiary font-semibold group-hover:gap-2 transition-all">
+<span>Send Secure Mail</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</a>
+<!-- Google Meet Session -->
+<a class="group relative rounded-xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="#matrix">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">video_camera_front</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary/10 text-secondary uppercase font-bold">15 Mins</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Aesthetic Briefing</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">1-on-1 discovery review &amp; live portfolio walkthrough.</p>
+<div class="flex items-center gap-1 font-label-md text-label-md text-secondary font-semibold group-hover:gap-2 transition-all">
+<span>Book Video Slot</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</a>
+<!-- Private Telegram / Discord -->
+<a class="group relative rounded-xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" href="#">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">Atelier Feed</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Studio Collective</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Exclusive Telegram &amp; Discord design broadcasts.</p>
+<div class="flex items-center gap-1 font-label-md text-label-md text-on-surface font-semibold group-hover:gap-2 transition-all">
+<span>Join Atelier Channel</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Project Discovery Matrix (Form Engine) -->
+<section class="relative px-margin-mobile lg:px-margin-desktop py-space-lg" id="matrix">
+<div class="max-w-7xl mx-auto">
+<div class="relative rounded-2xl bg-surface-container-lowest/85 backdrop-blur-2xl p-space-md lg:p-space-xl shadow-xl overflow-hidden">
+<!-- Visual Accent Water Droplet Header Element -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg border-b border-surface-container-high">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+              Interactive Commission Matrix
+            </div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Curate Your Commission Scope</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select target parameters to sync with our design sprint capacity.</p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+<div class="text-left">
+<div class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Zero-Intermediary Guarantee</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Speaks directly with Senior Creative Partner</div>
+</div>
+</div>
+</div>
+<form class="mt-space-lg space-y-space-lg" id="studio-inquiry-form" onsubmit="event.preventDefault(); window.handleDispatchSubmit();">
+<!-- Step 1: Discipline Selector Chips -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">1. Creative Architecture Discipline</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Select primary domain</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3" id="discipline-group">
+<button class="chip-item active text-left p-space-sm rounded-xl bg-surface-container-high/80 hover:bg-surface-container-highest transition-all duration-200" data-discipline="wedding" onclick="selectChip(this, 'discipline-group')" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Wedding &amp; Ceremony</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Luxe invites, photo manipulation, motion memoirs.</p>
+</button>
+<button class="chip-item text-left p-space-sm rounded-xl bg-surface-container-high/40 hover:bg-surface-container-highest transition-all duration-200" data-discipline="brand" onclick="selectChip(this, 'discipline-group')" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Brand Identity</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Visual guidelines, typography system, digital stationery.</p>
+</button>
+<button class="chip-item text-left p-space-sm rounded-xl bg-surface-container-high/40 hover:bg-surface-container-highest transition-all duration-200" data-discipline="youtube" onclick="selectChip(this, 'discipline-group')" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">smart_display</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">YouTube High-CTR</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Algorithmic thumbnail suites, banners, motion bugs.</p>
+</button>
+<button class="chip-item text-left p-space-sm rounded-xl bg-surface-container-high/40 hover:bg-surface-container-highest transition-all duration-200" data-discipline="gaming" onclick="selectChip(this, 'discipline-group')" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">sports_esports</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Esports &amp; Mascot</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Hyper-stylized avatars, Twitch overlays, 3D badge craft.</p>
+</button>
+<button class="chip-item text-left p-space-sm rounded-xl bg-surface-container-high/40 hover:bg-surface-container-highest transition-all duration-200" data-discipline="hybrid" onclick="selectChip(this, 'discipline-group')" type="button">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Hybrid Retainer</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Custom multi-deliverable sprints &amp; creative direction.</p>
+</button>
+</div>
+</div>
+<!-- Step 2: Turnaround Velocity & Budget Tier -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- Velocity -->
+<div class="space-y-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">2. Velocity &amp; Turnaround Urgency</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="velocity-group">
+<button class="chip-item active p-3 rounded-xl bg-surface-container-high/80 text-left transition-all" data-urgency="standard" onclick="selectChip(this, 'velocity-group')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Standard Pace</span>
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+</div>
+<div class="font-label-md text-label-md text-primary font-bold">3–5 Days</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Recommended balance</div>
+</button>
+<button class="chip-item p-3 rounded-xl bg-surface-container-high/40 text-left transition-all" data-urgency="express" onclick="selectChip(this, 'velocity-group')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Express Sprint</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">speed</span>
+</div>
+<div class="font-label-md text-label-md text-tertiary font-bold">48 Hours</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Fast-tracked queue</div>
+</button>
+<button class="chip-item p-3 rounded-xl bg-surface-container-high/40 text-left transition-all" data-urgency="vip" onclick="selectChip(this, 'velocity-group')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Emergency Drop</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">flash_on</span>
+</div>
+<div class="font-label-md text-label-md text-secondary font-bold">24 Hours VIP</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Dedicated live focus</div>
+</button>
+</div>
+</div>
+<!-- Budget Matrix -->
+<div class="space-y-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">3. Estimated Budget Envelope</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="budget-group">
+<button class="chip-item p-3 rounded-xl bg-surface-container-high/40 text-center transition-all" data-budget="200-500" onclick="selectChip(this, 'budget-group')" type="button">
+<div class="font-label-md text-label-md text-on-surface font-bold">$200 – $500</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Starter</div>
+</button>
+<button class="chip-item active p-3 rounded-xl bg-surface-container-high/80 text-center transition-all" data-budget="500-1200" onclick="selectChip(this, 'budget-group')" type="button">
+<div class="font-label-md text-label-md text-primary font-bold">$500 – $1,200</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Core Suite</div>
+</button>
+<button class="chip-item p-3 rounded-xl bg-surface-container-high/40 text-center transition-all" data-budget="1200-3000" onclick="selectChip(this, 'budget-group')" type="button">
+<div class="font-label-md text-label-md text-on-surface font-bold">$1,200 – $3,000</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Extensive</div>
+</button>
+<button class="chip-item p-3 rounded-xl bg-surface-container-high/40 text-center transition-all" data-budget="enterprise" onclick="selectChip(this, 'budget-group')" type="button">
+<div class="font-label-md text-label-md text-on-surface font-bold">$3,000+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Enterprise</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Client Identity Fields -->
+<div class="space-y-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">4. Atelier Client Coordinates</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Full Name -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Your Full Name *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">badge</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_name" placeholder="e.g. Sayan Mukherjee" required="" type="text"/>
+</div>
+</div>
+<!-- Brand / Channel -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Brand / Studio / Handle</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">corporate_fare</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_brand" placeholder="e.g. Lumina Collective / @creator" type="text"/>
+</div>
+</div>
+<!-- WhatsApp Hotline -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">WhatsApp Number (with country code) *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">phone_iphone</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_phone" placeholder="+91 98300 00000 / +1 (555)" required="" type="tel"/>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Primary Electronic Mail *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_email" placeholder="direct@organization.com" required="" type="email"/>
+</div>
+</div>
+<!-- Timezone / City -->
+<div class="space-y-1 sm:col-span-2 lg:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Base Location &amp; Timezone</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">public</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_timezone" placeholder="e.g. Kolkata (IST UTC+5:30) or London (GMT)" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4: Narrative Description -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">5. Vision, Concept &amp; Moodboard Narrative</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Be as expressive as desired</span>
+</div>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="client_narrative" placeholder="Detail your project essence, aesthetic expectations, visual anchors, target deliverable formats, color tendencies, and specific milestones..." rows="4"></textarea>
+</div>
+<!-- Step 5: Secure Dropzone Component -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-bold">6. Secure Moodboard &amp; Reference Asset Vault</label>
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                AES-256 Cloud Synchronized
+              </span>
+</div>
+<div class="relative group cursor-pointer rounded-2xl bg-surface-container-low/70 hover:bg-surface-container-high/60 p-space-lg text-center transition-all" id="dropzone">
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" multiple="" onchange="window.handleFileSelect(this)" type="file"/>
+<div class="flex flex-col items-center justify-center space-y-2">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px]">cloud_upload</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">Drag and drop moodboard assets here</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Supports Figma URL archives, Adobe Illustrator (.ai), Photoshop (.psd), PDF, PNG, JPG up to 100MB per parcel.</p>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm mt-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">folder_zip</span>
+<span>Or browse local directory files</span>
+</div>
+<div class="text-primary font-label-md text-label-md pt-2" id="file-list"></div>
+</div>
+</div>
+</div>
+<!-- Direct WhatsApp Dispatch Toggle & Action Button -->
+<div class="pt-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<label class="flex items-center gap-3 cursor-pointer select-none">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-0 accent-primary cursor-pointer" id="whatsapp_sync" type="checkbox"/>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-semibold">Immediate WhatsApp Bridge</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Duplicate ticket info to our direct studio line for instant response.</p>
+</div>
+</label>
+<button class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-tertiary-container hover:from-primary-container hover:to-tertiary text-on-primary font-label-lg text-label-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Submit Studio Dispatch</span>
+</button>
+</div>
+<!-- Submission Feedback Banner (Hidden by default) -->
+<div class="hidden rounded-xl p-space-md bg-tertiary-fixed text-on-tertiary-fixed shadow-md animate-fade-in" id="dispatch-success">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[24px]">task_alt</span>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-tertiary-fixed">Dispatch Transmitted Successfully!</div>
+<p class="font-body-md text-body-md text-on-tertiary-fixed mt-1">Your inquiry has entered our primary production queue. An Art Director will review your aesthetic scope and message via WhatsApp/Email within 14 minutes.</p>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Global Studio Operations & Timezone Hub -->
+<section class="relative px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="max-w-7xl mx-auto space-y-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Continuous Optical Production</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Active Studio Node Operations</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our global workflow ensures seamless 24-hour turnaround for fast-paced creators and luxury enterprise releases.</p>
+</div>
+<!-- Timezone Glass Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Kolkata HQ -->
+<div class="rounded-2xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-md flex flex-col justify-between space-y-space-md relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">Production Epicenter</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-2">Kolkata HQ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">India · IST (UTC+5:30)</p>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>LIVE DESK</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight" id="clock-kolkata">15:42:10 IST</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">palette</span>
+              Master Visual Architecture &amp; 3D Rendering Active
+            </div>
+</div>
+</div>
+<!-- London Node -->
+<div class="rounded-2xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-md flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm uppercase font-bold tracking-wider">EMEA Liaison</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-2">London Desk</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">United Kingdom · GMT (UTC+0)</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span>ONLINE</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight" id="clock-london">10:12:10 GMT</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">translate</span>
+              European Client Strategy &amp; Identity Review
+            </div>
+</div>
+</div>
+<!-- New York Node -->
+<div class="rounded-2xl p-space-md bg-surface-container-lowest/80 backdrop-blur-xl shadow-md flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm uppercase font-bold tracking-wider">Americas Stream</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-2">New York Hub</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">United States · EST (UTC-5)</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span>STANDBY INTAKE</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl">
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight" id="clock-ny">05:12:10 EST</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">trending_up</span>
+              High-CTR Creator Delivery &amp; YouTube Release Desk
+            </div>
+</div>
+</div>
+</div>
+<!-- SLA Badges Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter pt-space-xs">
+<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low/70 backdrop-blur-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">&lt; 2 Hr SLA Guarantee</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Guaranteed acknowledgment</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low/70 backdrop-blur-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">100% Strict Mutual NDA</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Pre-signed confidentiality</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low/70 backdrop-blur-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">person_check</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Direct Senior Access</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Zero account executive latency</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low/70 backdrop-blur-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Encrypted Vault Handoff</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Archived production vectors</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Studio Digital Atelier Visual & FAQ Split Section -->
+<section class="relative px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left: Studio Visual Collage & Emergency Contact Box -->
+<div class="lg:col-span-5 space-y-space-md">
+<div class="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container-lowest">
+<img class="w-full h-80 object-cover" data-alt="Futuristic luxury graphic design atelier with frosted glass partitions, soft cyan ambient light, dual curved color calibrated monitors showing liquid 3D vectors, elegant minimalist obsidian furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAaKgOmWIdOx2YBE5VZSbFIUnOrEJ8XrSEDFotClaj1OY54jF3isqa7PHnXMTWjdkJkDoOl_k6EHvMwsIlRPsV0OlbRp4qCUCwi8xBVPnc2fB22xklwAVTs3-CiQGNxTAhtZSCfRpOox_BSb3gWkVZBiChdmfj84SEsuYXqjv0f3vHkhKRkuKX3GOZxp3lDvzMprEbVNUza-c1xyRjWdv3RvreC855Mn0GP0Bhlaw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-surface-container-lowest">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed font-bold">Inside The Atelier</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest">Where Light Meets Geometry</h3>
+<p class="font-body-sm text-body-sm text-surface-variant/90">Calibrated monitors, high-index color grading rigs, and tactile drafting desks.</p>
+</div>
+</div>
+<!-- High-Priority Broadcast / Emergency Hotline -->
+<div class="rounded-2xl p-space-md bg-secondary-fixed/30 backdrop-blur-xl shadow-md border-l-4 border-secondary space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">crisis_alert</span>
+<span class="font-headline-sm text-headline-sm text-on-secondary-fixed font-bold">Live Broadcast Emergency?</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Operating against a breaking YouTube upload, viral campaign drop, or imminent ceremony schedule? Ping our priority dispatch line immediately.
+            </p>
+<div class="flex items-center gap-3 pt-1">
+<a class="px-4 py-2 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-on-secondary-fixed-variant transition-colors flex items-center gap-1.5" href="https://wa.me/919800000000?text=EMERGENCY%20PRIORITY%20DISPATCH" target="_blank">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>Dial Urgent Dispatch</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Available 24/7/365</span>
+</div>
+</div>
+</div>
+<!-- Right: FAQ Accordion -->
+<div class="lg:col-span-7 space-y-space-md">
+<div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Clarifications &amp; Protocols</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Direct Inquiries Intelligence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Everything you need to understand our project engagement mechanics.</p>
+</div>
+<!-- Accordion Items -->
+<div class="space-y-3" id="faq-accordion">
+<!-- Item 1 -->
+<div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm overflow-hidden transition-all">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface font-bold" onclick="toggleFaq(this)" type="button">
+<span>How quickly can we start once the inquiry is submitted?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md">
+                For standard inquiries, discovery onboarding starts within 2 to 4 business hours. If you select our "Express Sprint (48 Hours)" or "VIP Emergency Drop", a senior director will initiate asset intake and project kickoff within 30 minutes of payment confirmation.
+              </div>
+</div>
+<!-- Item 2 -->
+<div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm overflow-hidden transition-all">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface font-bold" onclick="toggleFaq(this)" type="button">
+<span>Do you work with international clients across different time zones?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md">
+                Yes, over 65% of our commissions originate from North America, Europe, the UAE, and Southeast Asia. We maintain overlapping shifts between our Kolkata HQ and London/New York desks to guarantee live revisions during your core daylight hours.
+              </div>
+</div>
+<!-- Item 3 -->
+<div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm overflow-hidden transition-all">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface font-bold" onclick="toggleFaq(this)" type="button">
+<span>Can we sign a mutual Non-Disclosure Agreement (NDA) before sharing sensitive project briefs?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md">
+                Absolutely. We handle unannounced creator launches, proprietary brand acquisitions, and private high-profile wedding events. We provide a bilateral NDA document via DocuSign in minutes prior to any brief upload.
+              </div>
+</div>
+<!-- Item 4 -->
+<div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm overflow-hidden transition-all">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface font-bold" onclick="toggleFaq(this)" type="button">
+<span>What payment methods are supported for global clients?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md">
+                We accept major international credit/debit cards via Stripe, Wise Direct Transfers, PayPal Global, Wire Transfer (USD/EUR/GBP/INR), and UPI for domestic commissions in India. Commercial invoices with corporate tax credits are generated automatically.
+              </div>
+</div>
+</div>
+<!-- Bottom Micro Assurance -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">thumb_up</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+              Every commission includes <strong>unlimited visual calibration passes</strong> until mathematical and aesthetic perfection is achieved.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Logic Script -->
+<script>
+    // Selection state helpers for Inquiry Matrix
+    function selectChip(element, groupId) {
+      const parent = document.getElementById(groupId);
+      if (!parent) return;
+      const chips = parent.querySelectorAll('.chip-item');
+      chips.forEach(chip => {
+        chip.classList.remove('bg-surface-container-high/80', 'font-bold');
+        chip.classList.add('bg-surface-container-high/40');
+      });
+      element.classList.remove('bg-surface-container-high/40');
+      element.classList.add('bg-surface-container-high/80');
+    }
+
+    // FAQ Accordion Handler
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const isHidden = content.classList.contains('hidden');
+      
+      document.querySelectorAll('#faq-accordion .faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('#faq-accordion button .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Dropzone feedback
+    window.handleFileSelect = function(input) {
+      const fileListDiv = document.getElementById('file-list');
+      if (input.files && input.files.length > 0) {
+        const names = Array.from(input.files).map(f => f.name).join(', ');
+        fileListDiv.innerHTML = '<span class="material-symbols-outlined text-[16px] inline align-middle">attach_file</span> Attached: ' + names;
+      }
+    };
+
+    // Live Clock Updates for World Nodes
+    function updateClocks() {
+      const now = new Date();
+      
+      // Kolkata (IST, UTC+5:30)
+      const istOptions = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const istStr = new Intl.DateTimeFormat([], istOptions).format(now);
+      const elKolkata = document.getElementById('clock-kolkata');
+      if (elKolkata) elKolkata.innerText = istStr + ' IST';
+
+      // London (GMT, Europe/London)
+      const gmtOptions = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const gmtStr = new Intl.DateTimeFormat([], gmtOptions).format(now);
+      const elLondon = document.getElementById('clock-london');
+      if (elLondon) elLondon.innerText = gmtStr + ' GMT';
+
+      // New York (EST, America/New_York)
+      const nyOptions = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const nyStr = new Intl.DateTimeFormat([], nyOptions).format(now);
+      const elNy = document.getElementById('clock-ny');
+      if (elNy) elNy.innerText = nyStr + ' EST';
+    }
+
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    // Form Submission Protocol
+    window.handleDispatchSubmit = function() {
+      const name = document.getElementById('client_name').value;
+      const phone = document.getElementById('client_phone').value;
+      const email = document.getElementById('client_email').value;
+      const narrative = document.getElementById('client_narrative').value;
+      const syncWhatsApp = document.getElementById('whatsapp_sync').checked;
+
+      const successBox = document.getElementById('dispatch-success');
+      if (successBox) {
+        successBox.classList.remove('hidden');
+        successBox.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      if (syncWhatsApp && phone) {
+        const textPayload = encodeURIComponent(`*New Studio Inquiry Dispatch*\nClient: ${name}\nContact: ${phone}\nEmail: ${email}\nBrief: ${narrative.substring(0, 150)}...`);
+        setTimeout(() => {
+          window.open(`https://wa.me/919800000000?text=${textPayload}`, '_blank');
+        }, 1200);
+      }
+    };
+  </script>
+</div></main><footer class="relative z-10 w-full bg-surface-container-low/70 backdrop-blur-2xl mt-space-xl shadow-[0_-1px_16px_rgba(19,27,46,0.03)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter lg:gap-gutter-lg"><div class="md:col-span-6 space-y-space-sm"><div class="flex items-center gap-space-xs"><img alt="SD Pixel Studio Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/><span class="font-headline-md text-headline-sm text-on-surface font-bold">SD Pixel Studio</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Ethereal digital craft studio delivering bespoke optical interactions, brand experiences, and cutting-edge visual design systems with pristine crystalline precision.</p></div><div class="md:col-span-3 space-y-space-xs"><div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Connect</div><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span>Instagram</a><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">smart_display</span>YouTube</a><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">forum</span>WhatsApp Channel</a></div></div><div class="md:col-span-3 space-y-space-xs"><div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Studio Inquiries</div><p class="font-body-sm text-body-sm text-on-surface-variant">Ready to engineer sensory fluid experiences? Let's curate your upcoming digital release.</p><a class="inline-block font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-path="contact" href="#">hello@sdpixelstudio.com →</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-md text-label-md text-on-surface-variant"><p>© 2025 SD Pixel Studio. All rights reserved. Liquid Glass Creative Arts.</p><div class="flex items-center gap-space-md"><a class="px-3 py-1 rounded-full bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm tracking-wider uppercase transition-colors flex items-center gap-1.5" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[14px]">lock</span>/admin</a></div></div></div></footer></body></html>

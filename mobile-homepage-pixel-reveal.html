@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#004b73", "surface-variant": "#dae2fd", "tertiary": "#006387", "primary-fixed": "#cce5ff", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffafd3", "error-container": "#ffdad6", "outline-variant": "#bfc7d2", "on-surface": "#131b2e", "surface-container": "#eaedff", "on-tertiary-container": "#fcfcff", "on-primary-container": "#fdfcff", "tertiary-fixed": "#c4e7ff", "surface-container-low": "#f2f3ff", "on-secondary-fixed": "#3d0026", "error": "#ba1a1a", "primary-container": "#007bb9", "surface-container-high": "#e2e7ff", "on-error-container": "#93000a", "on-surface-variant": "#3f4850", "on-background": "#131b2e", "inverse-on-surface": "#eef0ff", "secondary-fixed": "#ffd8e7", "on-secondary": "#ffffff", "outline": "#707881", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface": "#faf8ff", "inverse-surface": "#283044", "surface-dim": "#d2d9f4", "on-secondary-fixed-variant": "#85145a", "on-tertiary-fixed": "#001e2c", "surface-container-highest": "#dae2fd", "tertiary-fixed-dim": "#7bd0ff", "inverse-primary": "#93ccff", "secondary": "#a43073", "background": "#faf8ff", "on-primary": "#ffffff", "primary": "#006194", "tertiary-container": "#007da9", "on-primary-fixed": "#001d31", "surface-tint": "#006398", "secondary-container": "#fc79bd", "on-tertiary-fixed-variant": "#004c69", "primary-fixed-dim": "#93ccff", "on-secondary-container": "#76014e", "surface-bright": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1.25rem", "gutter-sm": "1rem", "gutter": "1.5rem", "margin-desktop": "4rem", "space-xs": "0.375rem", "margin": "2rem", "space-xl": "3.5rem", "margin-mobile": "1.25rem", "space-lg": "2rem", "space-sm": "0.75rem", "gutter-lg": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-xl-mobile": ["Syne"], "headline-lg-mobile": ["Syne"], "headline-md": ["Syne"], "label-lg": ["Inter"], "headline-lg": ["Syne"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-sm": ["Plus Jakarta Sans"], "display-xl": ["Syne"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-sm": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-xl-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "headline-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "display-xl": ["72px", { "lineHeight": "78px", "letterSpacing": "-0.03em", "fontWeight": "800" }] } } } }</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Menu Navigation" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">menu_open</span></button><div class="flex flex-col"><span class="font-headline-sm text-label-lg tracking-tight text-on-surface uppercase">SD Pixel Studio</span><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary uppercase">Available for Q3</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Inquiry Contact" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chat_bubble</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full px-margin-mobile space-y-space-lg">
+<!-- Ambient Fluid Light Blobs (Decorative Depth) -->
+<div class="relative w-full">
+<div class="absolute -top-10 -left-6 w-48 h-48 bg-primary-fixed rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+<div class="absolute top-24 -right-8 w-56 h-56 bg-secondary-fixed rounded-full blur-3xl opacity-35 pointer-events-none"></div>
+<!-- Editorial Hero Header Copy -->
+<div class="relative z-10 flex flex-col space-y-space-xs pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high w-fit backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Available for Q3 · 24-48h Dispatch</span>
+</div>
+<h1 class="font-display-xl-mobile text-display-xl-mobile text-on-surface tracking-tight mt-space-xs">
+        Where Digital <span class="text-primary italic">Pixels</span> Dissolve Into Masterpieces.
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Bespoke ceremonial wedding suites, high-CTR creator graphics, esports vector identities &amp; precision motion engineering.
+      </p>
+<!-- Quick Action Pills -->
+<div class="flex items-center gap-2 pt-2">
+<a class="px-5 py-2.5 rounded-full bg-on-surface text-surface font-label-lg text-label-lg shadow-md hover:bg-primary transition-all flex items-center gap-1.5 active:scale-95" href="#featured">
+<span>Explore Works</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+<a class="px-4 py-2.5 rounded-full bg-surface-container-high text-primary font-label-lg text-label-lg backdrop-blur-md hover:bg-surface-container-highest transition-all flex items-center gap-1.5 active:scale-95" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Instant Quote</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Hero Pixel Reveal Card Interactive -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-surface-container-lowest" id="pixelCard">
+<div class="relative h-72 w-full overflow-hidden">
+<!-- Background Luxury Visual Image -->
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="High fashion editorial digital art portrait shimmering with liquid cyan chrome lighting and prismatic refractions, gold vector linework and luxury typography elements in obsidian and sky blue studio aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-_ZSVXSqlbAuCjBC0epkCCqN3ZsegApU7asqhWc4JMplfEp_4paR43I_g4xcY-2wtlCKXUIgkvcP4QkIABoINxzBj_IgRKDj6BSvPxYfISJLlKcb1QZQTDUS6AhNMY1bDCj9TayCX99L2gL29JeSYPwtKclAPixOJ6gXs0zNeJ5LYKYgt5xNrFHG8amk4f9F5PEy366zqOjewoe-sL6guUUBbNRK61Lme1bHdk1o"/>
+<!-- Frosted Pixel Reveal Overlay Matrix -->
+<div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-40 mix-blend-overlay pointer-events-none transition-opacity duration-300" id="pixelMesh">
+<div class="bg-surface backdrop-blur-[2px]"></div><div class="bg-primary/20 backdrop-blur-[4px]"></div><div class="bg-surface/10 backdrop-blur-[1px]"></div>
+<div class="bg-primary/10 backdrop-blur-[3px]"></div><div class="bg-surface/30 backdrop-blur-[6px]"></div><div class="bg-surface/5 backdrop-blur-[1px]"></div>
+<div class="bg-surface/20 backdrop-blur-[3px]"></div><div class="bg-surface/50 backdrop-blur-[8px]"></div><div class="bg-primary/30 backdrop-blur-[2px]"></div>
+<div class="bg-surface/10 backdrop-blur-[1px]"></div><div class="bg-surface/40 backdrop-blur-[5px]"></div><div class="bg-primary/20 backdrop-blur-[4px]"></div>
+<div class="bg-primary/20 backdrop-blur-[4px]"></div><div class="bg-surface/10 backdrop-blur-[2px]"></div><div class="bg-surface/30 backdrop-blur-[6px]"></div>
+<div class="bg-primary/10 backdrop-blur-[1px]"></div><div class="bg-surface/50 backdrop-blur-[7px]"></div><div class="bg-surface/20 backdrop-blur-[3px]"></div>
+<div class="bg-surface/40 backdrop-blur-[5px]"></div><div class="bg-primary/30 backdrop-blur-[3px]"></div><div class="bg-surface/10 backdrop-blur-[1px]"></div>
+<div class="bg-surface/20 backdrop-blur-[4px]"></div><div class="bg-primary/10 backdrop-blur-[2px]"></div><div class="bg-surface/30 backdrop-blur-[6px]"></div>
+<div class="bg-surface/10 backdrop-blur-[1px]"></div><div class="bg-surface/30 backdrop-blur-[5px]"></div><div class="bg-primary/20 backdrop-blur-[3px]"></div>
+<div class="bg-surface/50 backdrop-blur-[8px]"></div><div class="bg-primary/10 backdrop-blur-[1px]"></div><div class="bg-surface/20 backdrop-blur-[4px]"></div>
+<div class="bg-primary/30 backdrop-blur-[2px]"></div><div class="bg-surface/20 backdrop-blur-[4px]"></div><div class="bg-surface/40 backdrop-blur-[6px]"></div>
+<div class="bg-primary/10 backdrop-blur-[2px]"></div><div class="bg-surface/10 backdrop-blur-[1px]"></div><div class="bg-surface/30 backdrop-blur-[5px]"></div>
+</div>
+<!-- Top Overlay Controls -->
+<div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Shader: Active · 60fps</span>
+</div>
+<button class="px-2.5 py-1 rounded-full bg-on-surface/85 text-surface text-label-sm font-label-sm backdrop-blur-md flex items-center gap-1 shadow-sm active:scale-90 transition-transform" id="toggleDissolveBtn" onclick="togglePixelDissolve()">
+<span class="material-symbols-outlined text-[13px]">lens_blur</span>
+<span>Dissolve</span>
+</button>
+</div>
+<!-- Bottom Audio / Visual Tech Spec Badges -->
+<div class="absolute bottom-3 inset-x-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-label-sm text-label-sm backdrop-blur-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">surround_sound</span> Dolby Atmos
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-label-sm text-label-sm backdrop-blur-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">hd</span> 4K 60FPS Master
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-label-sm text-label-sm backdrop-blur-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary">token</span> Lossless Vector
+        </span>
+</div>
+</div>
+<!-- Interactive Card Meta Footer -->
+<div class="p-4 flex items-center justify-between bg-surface-container-low">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary uppercase">Vault Showcase #089</span>
+<span class="font-headline-sm text-body-lg font-semibold text-on-surface truncate">Celestial Prismatic Suite</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-90 transition-transform flex-shrink-0" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Studio Metrics Bar -->
+<div class="grid grid-cols-2 gap-2.5 w-full">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Archive</span>
+</div>
+<span class="font-headline-md text-headline-sm text-on-surface tracking-tight">350+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vault Masters Shipped</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Turnaround</span>
+</div>
+<span class="font-headline-md text-headline-sm text-on-surface tracking-tight">&lt;48h</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatch SLA Guarantee</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">polyline</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fidelity</span>
+</div>
+<span class="font-headline-md text-headline-sm text-on-surface tracking-tight">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Infinite Vector Math</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">hotel_class</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rating</span>
+</div>
+<span class="font-headline-md text-headline-sm text-on-surface tracking-tight">4.98★</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Creator Trust Score</span>
+</div>
+</div>
+<!-- Curated Disciplines Tabs -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase">Core Practices</span>
+<h2 class="font-headline-md text-headline-sm text-on-surface">Curated Disciplines</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Swipe ➔</span>
+</div>
+<!-- Horizontal Scrolling Discipline Capsules -->
+<div class="flex gap-3 overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile scroll-smooth">
+<!-- Discipline 1: Royal Wedding -->
+<div class="min-w-[240px] max-w-[260px] p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Ceremonial Suite</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mt-0.5">Royal Weddings</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">Vellum foil print, custom typography monograms &amp; 4K orchestral motion invites.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">From $450</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Discipline 2: Creator & YouTube -->
+<div class="min-w-[240px] max-w-[260px] p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">smart_display</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Creator Economy</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mt-0.5">High-CTR Graphics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">Verified A/B optimized packaging, visual hierarchy framing &amp; eye-tracking hooks.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">From $120</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Discipline 3: Esports & Gaming -->
+<div class="min-w-[240px] max-w-[260px] p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-variant text-on-surface flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">sports_esports</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Franchise Identity</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mt-0.5">Esports Marks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">Mathematical vector emblems, metallic mascots, stinger transitions &amp; Twitch overlays.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">From $350</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Discipline 4: Brand Identity -->
+<div class="min-w-[240px] max-w-[260px] p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">architecture</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Enterprise Scale</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mt-0.5">Brand Geometry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug">Golden-ratio logomarks, multi-tier typography scales &amp; design token architecture.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">From $800</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Works Spotlight Section -->
+<div class="flex flex-col space-y-space-sm pt-space-xs" id="featured">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase">Master Series</span>
+<h2 class="font-headline-md text-headline-sm text-on-surface">Spotlight Vault</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">3 Recent</span>
+</div>
+<!-- Work Card 1: Wedding Suite -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="Royal Indian wedding invitation typography suite with celestial gold foil stamping, deep indigo watercolor card texture, delicate serif lettering, and regal insignia badges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWd5GJBEYoOqIikWvQfdlOrKhlQPF1zT42bRSueUiTMqai6mv1RYcybdizms7TYCCnr3PTr3waY1iHhH2B9KwGucpSDiEBjNJhQgmplx5hVpp48q6fQgretR80I_eg7oJgZEAl0juTffuzxwwjqaQGCL4Gv4tE7XrZCLufWk_O06yGo57PRqoQoOYUo4aYFnNa3XEecpHTZfMyfBlUojyhRMTeAkU6jo_1SsAqIu0"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Ceremonial Vault · $600 Tier</span>
+</div>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-surface/90 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</div>
+</div>
+<div class="p-4 flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Celestial Rajputana Suite</h3>
+<span class="font-label-md text-label-md text-secondary font-semibold">Kapoor &amp; Singhania</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ultra-luxe physical print assets with synchronous 4K Dolby Atmos motion invitation video.</p>
+</div>
+</div>
+<!-- Work Card 2: Esports Cyber Wolf -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="Futuristic cyber wolf esports gaming logo mascot with glowing cyan and electric pink chromatic edges, sleek geometric vector facets against dark obsidian glass background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdJV7mAyaeQ6Wr-Sotl7fPk0CSFeZcMpuxqZzTnrFvOoJ6rQ3jhZzvGAyk1h7Kx1nndCg7KedSYy8WUztYncWAEiftpl4I393Fq1YQU_GEyX81bv0cNALNOBxi9pLsAX6vuaDeLTHwainpH-QVjflPIoZpQXeSSOuPj3Yr_m7CXEP7XuuHveAKX_QpMqqDOXnfl1vrsIrkHlIRJkDCGiLnncn-LuwBBcs6UfhTLOM"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Esports Pro League · $850 Tier</span>
+</div>
+</div>
+<div class="p-4 flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Aetheria Cyber Wolf Mark</h3>
+<span class="font-label-md text-label-md text-primary font-semibold">Division 1 Franchise</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engineered vector mark with 3D animation sequence, tournament jersey lockups &amp; broadcast stinger.</p>
+</div>
+</div>
+<!-- Work Card 3: YouTube 1% CTR -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="High energy YouTube thumbnail packaging visual with intense focal lighting, vivid cyan and magenta contrast, 3D golden escape key floating over tropical stormy island landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3bOjojN3F9AO7ZBsvJUj05itD-6bskzZn_Ri00yRgqiHi63OrSilQxK-0iJsT9-l3kAMd088DVPcPkOX1rZBPLge-5HzxtwOI6oitAbNCbPrqKhjFJWhbs33ebXZ53piP_2iJZJ0rg8J_fIcU062OYtOk6tqwXEcIOHho2wUfp6tH6Y5tb3hSD6VaOD0W1sSCCzIvND_uQwIiqRXWM8OjmbQYfZ7zN5Vz6BqoAwQ"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Creator Apex · Top 1% CTR</span>
+</div>
+</div>
+<div class="p-4 flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Escape Island Challenge</h3>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">14.2M Views</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eye-flow optimized thumbnail package with A/B variant winning at 11.4% click-through rate.</p>
+</div>
+</div>
+</div>
+<!-- Interactive Project Scope Calculator Teaser -->
+<div class="p-5 rounded-2xl bg-surface-container-high relative overflow-hidden shadow-sm flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase">Quick Estimator</span>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Project Scope Calculator</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+</div>
+</div>
+<!-- Interactive Discipline Pill Selector -->
+<div class="flex flex-col space-y-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Select Deliverable Archetype:</span>
+<div class="grid grid-cols-2 gap-2" id="calcTypeGroup">
+<button class="calc-btn p-2.5 rounded-xl bg-surface text-primary font-label-md text-label-md shadow-sm text-left active:scale-95 transition-all" onclick="selectCalcType(this, 600, 'Royal Wedding Suite')">
+          👑 Wedding Suite
+        </button>
+<button class="calc-btn p-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md text-left active:scale-95 transition-all" onclick="selectCalcType(this, 180, 'Creator Packaging')">
+          🎬 High-CTR Video
+        </button>
+<button class="calc-btn p-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md text-left active:scale-95 transition-all" onclick="selectCalcType(this, 450, 'Esports Identity')">
+          ⚡ Esports Mark
+        </button>
+<button class="calc-btn p-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md text-left active:scale-95 transition-all" onclick="selectCalcType(this, 850, 'Brand Token Suite')">
+          💎 Complete Brand
+        </button>
+</div>
+</div>
+<!-- Calculated Output Banner -->
+<div class="p-3 rounded-xl bg-surface flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimated Dispatch</span>
+<span class="font-label-lg text-label-lg font-bold text-primary" id="calcEstimateText">~36-48 Hours ($600)</span>
+</div>
+<a class="px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 active:scale-90 transition-transform" href="https://wa.me/?text=Hi%20SD%20Pixel%20Studio,%20I%20am%20interested%20in%20the%20Royal%20Wedding%20Suite." id="calcWaLink" rel="noopener noreferrer" target="_blank">
+<span>Lock Slot</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Client Testimonials & Creator Trust -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase">Verified Praise</span>
+<h2 class="font-headline-md text-headline-sm text-on-surface">Creator Endorsements</h2>
+</div>
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Review Card 1 -->
+<div class="p-4 rounded-2xl bg-surface-container-low shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold font-headline-sm text-label-md">
+            AS
+          </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Aanya Singhania</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Udaipur Royal Wedding Client</span>
+</div>
+</div>
+<div class="flex text-primary text-[14px]">★★★★★</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+        "The digital invites left our 800 international guests breathless. The Dolby Atmos audio sync and vector calligraphy set a standard of elegance we didn't think was possible in 48 hours."
+      </p>
+</div>
+<!-- Review Card 2 -->
+<div class="p-4 rounded-2xl bg-surface-container-low shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold font-headline-sm text-label-md">
+            MK
+          </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Marcus K.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Apex Predator Gaming Lead</span>
+</div>
+</div>
+<div class="flex text-primary text-[14px]">★★★★★</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+        "Our channel click-through spiked from 4.8% to 11.2% in our very first release using SD Studio packaging. The fidelity is mathematical perfection."
+      </p>
+</div>
+</div>
+<!-- Bottom VIP WhatsApp Intake Bridge -->
+<div class="p-6 rounded-3xl bg-on-surface text-surface flex flex-col space-y-4 shadow-xl relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-surface-variant uppercase tracking-wider">Direct Studio Priority Intake</span>
+</div>
+<div class="flex flex-col space-y-1">
+<h3 class="font-headline-md text-headline-sm text-surface font-bold leading-tight">Ready to Command Distinction?</h3>
+<p class="font-body-sm text-body-sm text-surface-variant leading-relaxed">
+        Bypass ticketing queues. Connect directly with the Lead Creative Director via instant encrypted WhatsApp bridge.
+      </p>
+</div>
+<a class="w-full py-3.5 px-4 rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:bg-primary-container active:scale-95 transition-all" href="https://wa.me/?text=Hi%20SD%20Pixel%20Studio,%20I%20would%20like%20to%20commission%20a%20priority%20project." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Lead Director Directly</span>
+</a>
+<div class="flex items-center justify-center gap-3 pt-1 text-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> 256-Bit Vault Encrypted
+      </span>
+<span>·</span>
+<span>NDA Guaranteed</span>
+</div>
+</div>
+</div>
+<!-- Vanilla JS for Micro-Interactions -->
+<script>
+  // Pixel Dissolve Interaction
+  let pixelDissolved = false;
+  function togglePixelDissolve() {
+    const mesh = document.getElementById('pixelMesh');
+    const btnText = document.getElementById('toggleDissolveBtn').querySelector('span:last-child');
+    if (!pixelDissolved) {
+      mesh.classList.remove('opacity-40');
+      mesh.classList.add('opacity-0');
+      btnText.textContent = 'Restore';
+      pixelDissolved = true;
+    } else {
+      mesh.classList.remove('opacity-0');
+      mesh.classList.add('opacity-40');
+      btnText.textContent = 'Dissolve';
+      pixelDissolved = false;
+    }
+  }
+
+  // Mini Calculator Pill Selector
+  function selectCalcType(btn, price, title) {
+    const group = document.getElementById('calcTypeGroup');
+    const buttons = group.querySelectorAll('.calc-btn');
+    buttons.forEach(b => {
+      b.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+      b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+    });
+
+    btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+    btn.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+
+    const estimateText = document.getElementById('calcEstimateText');
+    const waLink = document.getElementById('calcWaLink');
+
+    let hours = price > 500 ? '48-72 Hours' : '24-48 Hours';
+    estimateText.textContent = `~${hours} ($${price})`;
+    waLink.href = `https://wa.me/?text=Hi%20SD%20Pixel%20Studio,%20I%20am%20interested%20in%20the%20${encodeURIComponent(title)}%20package%20estimated%20at%20$${price}.`;
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(19,27,46,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-between h-20 px-gutter-sm"><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">diamond</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome_motion</span><span class="font-label-sm text-label-sm">Portfolio</span></a><div class="relative -top-3 flex items-center justify-center"><a aria-label="WhatsApp Quick Action" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(0,97,148,0.28)] hover:bg-primary-container transition-all active:scale-95" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[22px]">chat</span></a></div><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[22px]">layers</span><span class="font-label-sm text-label-sm">Services</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[22px]">alternate_email</span><span class="font-label-sm text-label-sm">Contact</span></a></div></nav></body></html>

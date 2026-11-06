@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_SVG_START:ANIMATION_44 class="fixed inset-0 w-full h-full" --><div class="fixed inset-0 w-full h-full" id="animated-svg-ANIMATION_44" style="display:block;"><svg height="100%" viewbox="0 0 512 512" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Background Gradient -->
+<radialgradient cx="50%" cy="40%" id="bgGlow" r="60%">
+<stop offset="0%" stop-color="#181c24"></stop>
+<stop offset="60%" stop-color="#0b0e14"></stop>
+<stop offset="100%" stop-color="#05070a"></stop>
+</radialgradient>
+<!-- Liquid S Gradient (Cyan to Vibrant Blue) -->
+<lineargradient id="gradS" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#00e5ff"></stop>
+<stop offset="50%" stop-color="#0088ff"></stop>
+<stop offset="100%" stop-color="#1a4bff"></stop>
+</lineargradient>
+<!-- Liquid D Gradient (Purple to Neon Pink to Amber Glow) -->
+<lineargradient id="gradD" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#5522e0"></stop>
+<stop offset="50%" stop-color="#ba13d6"></stop>
+<stop offset="100%" stop-color="#ff3388"></stop>
+</lineargradient>
+<!-- Orange Accent Energy Gradient -->
+<lineargradient id="gradOrange" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffb347"></stop>
+<stop offset="100%" stop-color="#ff7b00"></stop>
+</lineargradient>
+<!-- Specular Liquid Shimmer -->
+<lineargradient id="specularGleam" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0"></stop>
+<stop offset="50%" stop-color="#ffffff" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+</lineargradient>
+<!-- Glass & Drop Shadow Filters -->
+<filter height="140%" id="neonGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="12"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+<filter height="140%" id="dropletShadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="16" flood-color="#000000" flood-opacity="0.7" stddeviation="18"></fedropshadow>
+<fedropshadow dx="0" dy="4" flood-color="#00b4d8" flood-opacity="0.25" stddeviation="8"></fedropshadow>
+</filter>
+</defs>
+<style>
+    /* Continuous Breathing & Floating */
+    @keyframes studioFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(0.5deg); }
+    }
+    
+    /* Water Ripple Dispersion Waves */
+    @keyframes waterRipple {
+      0% { r: 120px; opacity: 0.6; stroke-width: 3px; }
+      50% { opacity: 0.25; stroke-width: 1.5px; }
+      100% { r: 230px; opacity: 0; stroke-width: 0.5px; }
+    }
+
+    /* Ambient Pulsing Aura */
+    @keyframes auraPulse {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.12); }
+    }
+
+    /* Dispersing Pixel Blocks */
+    @keyframes pixelDrift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.95; }
+      50% { transform: translate(14px, -12px) scale(1.15); opacity: 0.6; }
+    }
+    @keyframes pixelDrift2 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.85; }
+      50% { transform: translate(-12px, 10px) scale(0.9); opacity: 0.4; }
+    }
+    @keyframes pixelDrift3 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+      50% { transform: translate(18px, 14px) scale(1.25); opacity: 0.7; }
+    }
+    @keyframes pixelGlowOrange {
+      0%, 100% { fill: #ff9838; filter: drop-shadow(0 0 4px #ff9838); }
+      50% { fill: #ffc278; filter: drop-shadow(0 0 12px #ff9838); }
+    }
+
+    /* Specular Liquid Light Gleam */
+    @keyframes gleamSwipe {
+      0% { transform: translateX(-350px) rotate(25deg); opacity: 0; }
+      20% { opacity: 0.8; }
+      50% { transform: translateX(350px) rotate(25deg); opacity: 0; }
+      100% { transform: translateX(350px) rotate(25deg); opacity: 0; }
+    }
+
+    .floating-core {
+      animation: studioFloat 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .ripple-ring-1 {
+      animation: waterRipple 4.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      transform-origin: center;
+    }
+    .ripple-ring-2 {
+      animation: waterRipple 4.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      animation-delay: 2.25s;
+      transform-origin: center;
+    }
+    .aura-circle {
+      animation: auraPulse 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .pixel-p1 { animation: pixelDrift1 4s ease-in-out infinite; }
+    .pixel-p2 { animation: pixelDrift2 3.6s ease-in-out infinite 0.5s; }
+    .pixel-p3 { animation: pixelDrift3 4.2s ease-in-out infinite 1s; }
+    .pixel-accent { animation: pixelGlowOrange 2.5s ease-in-out infinite; }
+    .gleam-bar {
+      animation: gleamSwipe 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+  </style>
+<!-- App Icon Squircle Container -->
+<rect fill="url(#bgGlow)" height="512" rx="128" stroke="#222834" stroke-width="3" width="512"></rect>
+<!-- Hydrophobic Specular Rim Light on App Icon -->
+<rect fill="none" height="506" rx="126" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" width="506" x="3" y="3"></rect>
+<!-- Water Repellent Ripple Effect Waves -->
+<circle class="ripple-ring-1" cx="256" cy="256" fill="none" r="130" stroke="#00e5ff"></circle>
+<circle class="ripple-ring-2" cx="256" cy="256" fill="none" r="130" stroke="#ff9838"></circle>
+<!-- Ambient Chromatic Aura -->
+<circle class="aura-circle" cx="256" cy="256" fill="#0088ff" filter="url(#neonGlow)" opacity="0.18" r="160"></circle>
+<circle class="aura-circle" cx="280" cy="270" fill="#ba13d6" filter="url(#neonGlow)" opacity="0.15" r="140"></circle>
+<!-- Main Floating Emblem Core -->
+<g class="floating-core" filter="url(#dropletShadow)">
+<!-- BACK LETTER: 'D' -->
+<path d="M 230 170
+             L 305 170
+             C 385 170 425 210 425 285
+             C 425 360 385 400 305 400
+             L 225 400
+             C 216 400 210 394 210 385
+             L 210 355
+             C 210 346 216 340 225 340
+             L 300 340
+             C 345 340 365 315 365 285
+             C 365 255 345 230 300 230
+             L 245 230
+             C 236 230 230 224 230 215
+             Z" fill="url(#gradD)" stroke="rgba(255,255,255,0.22)" stroke-width="2"></path>
+<!-- FRONT LETTER: 'S' -->
+<path d="M 335 110
+             L 185 110
+             C 125 110 95 140 95 195
+             C 95 240 120 265 175 275
+             L 260 290
+             C 285 295 295 305 295 320
+             C 295 340 275 355 240 355
+             L 155 355
+             C 146 355 140 349 140 340
+             L 140 315
+             C 140 306 134 300 125 300
+             L 95 300
+             C 86 300 80 306 80 315
+             L 80 350
+             C 80 395 115 415 175 415
+             L 255 415
+             C 320 415 355 385 355 330
+             C 355 280 325 255 270 245
+             L 190 230
+             C 165 225 155 215 155 200
+             C 155 180 175 168 210 168
+             L 335 168
+             C 344 168 350 162 350 153
+             L 350 125
+             C 350 116 344 110 335 110
+             Z" fill="url(#gradS)" stroke="rgba(255,255,255,0.28)" stroke-width="2"></path>
+<!-- Specular Water Beading Rim Highlight on 'S' -->
+<path d="M 335 112 L 185 112 C 127 112 98 141 98 195" fill="none" stroke="rgba(255,255,255,0.85)" stroke-linecap="round" stroke-width="3"></path>
+<!-- SPECULAR GLEAM OVERLAY (Hydrophobic Shine) -->
+<g clip-path="url(#logoClip)">
+<rect class="gleam-bar" fill="url(#specularGleam)" height="360" width="70" x="220" y="80"></rect>
+</g>
+<!-- DISPERSING 3D PIXEL CUBES (Cyan, Violet, and Light Orange Studio Energy) -->
+<!-- Upper Right Cluster -->
+<rect class="pixel-p1" fill="#8b14d9" height="22" rx="4" stroke="rgba(255,255,255,0.3)" width="22" x="380" y="110"></rect>
+<rect class="pixel-p2" fill="#a819ea" height="16" rx="3" width="16" x="415" y="95"></rect>
+<rect class="pixel-p3" fill="#c31ae5" height="24" rx="4" width="24" x="425" y="130"></rect>
+<rect class="pixel-accent" fill="#ff9838" height="14" rx="3" width="14" x="455" y="115"></rect>
+<rect class="pixel-p1" fill="#6910cc" height="18" rx="3" width="18" x="395" y="150"></rect>
+<!-- Mid & Lower Left Cluster -->
+<rect class="pixel-p2" fill="#00b4d8" height="18" rx="3" width="18" x="55" y="270"></rect>
+<rect class="pixel-p1" fill="#0088ff" height="22" rx="4" width="22" x="35" y="295"></rect>
+<rect class="pixel-p3" fill="#00e5ff" height="16" rx="3" width="16" x="65" y="325"></rect>
+<rect class="pixel-accent" fill="#ff9838" height="15" rx="3" width="15" x="30" y="335"></rect>
+</g>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_44 -->
+</body>
+</html>

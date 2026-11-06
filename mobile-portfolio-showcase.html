@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#004b73", "surface-variant": "#dae2fd", "tertiary": "#006387", "primary-fixed": "#cce5ff", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffafd3", "error-container": "#ffdad6", "outline-variant": "#bfc7d2", "on-surface": "#131b2e", "surface-container": "#eaedff", "on-tertiary-container": "#fcfcff", "on-primary-container": "#fdfcff", "tertiary-fixed": "#c4e7ff", "surface-container-low": "#f2f3ff", "on-secondary-fixed": "#3d0026", "error": "#ba1a1a", "primary-container": "#007bb9", "surface-container-high": "#e2e7ff", "on-error-container": "#93000a", "on-surface-variant": "#3f4850", "on-background": "#131b2e", "inverse-on-surface": "#eef0ff", "secondary-fixed": "#ffd8e7", "on-secondary": "#ffffff", "outline": "#707881", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface": "#faf8ff", "inverse-surface": "#283044", "surface-dim": "#d2d9f4", "on-secondary-fixed-variant": "#85145a", "on-tertiary-fixed": "#001e2c", "surface-container-highest": "#dae2fd", "tertiary-fixed-dim": "#7bd0ff", "inverse-primary": "#93ccff", "secondary": "#a43073", "background": "#faf8ff", "on-primary": "#ffffff", "primary": "#006194", "tertiary-container": "#007da9", "on-primary-fixed": "#001d31", "surface-tint": "#006398", "secondary-container": "#fc79bd", "on-tertiary-fixed-variant": "#004c69", "primary-fixed-dim": "#93ccff", "on-secondary-container": "#76014e", "surface-bright": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1.25rem", "gutter-sm": "1rem", "gutter": "1.5rem", "margin-desktop": "4rem", "space-xs": "0.375rem", "margin": "2rem", "space-xl": "3.5rem", "margin-mobile": "1.25rem", "space-lg": "2rem", "space-sm": "0.75rem", "gutter-lg": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-xl-mobile": ["Syne"], "headline-lg-mobile": ["Syne"], "headline-md": ["Syne"], "label-lg": ["Inter"], "headline-lg": ["Syne"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-sm": ["Plus Jakarta Sans"], "display-xl": ["Syne"] }, "fontSize": { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-sm": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-xl-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "headline-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "display-xl": ["72px", { "lineHeight": "78px", "letterSpacing": "-0.03em", "fontWeight": "800" }] } } } }</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Menu Navigation" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">menu_open</span></button><div class="flex flex-col"><span class="font-headline-sm text-label-lg tracking-tight text-on-surface uppercase">SD Pixel Studio</span><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary uppercase">Available for Q3</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Inquiry Contact" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chat_bubble</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Specular Ambient Underglow Blobs -->
+<div class="absolute -top-12 -left-16 w-72 h-72 rounded-full bg-primary-fixed-dim/40 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-80 -right-20 w-80 h-80 rounded-full bg-secondary-fixed/50 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-[900px] left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-surface-variant/70 blur-3xl pointer-events-none -z-10"></div>
+<!-- SECTION 1: Editorial Mobile Header -->
+<section class="px-gutter-sm pt-4 pb-2 flex flex-col gap-3">
+<!-- Breadcrumb / Cloud Capsule -->
+<div class="self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">SD Studio Engine v4.2 • Cloud Synced</span>
+</div>
+<!-- Prominent Editorial Title -->
+<div class="flex flex-col gap-1.5">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tight text-on-surface">
+        Curated Works &amp; <span class="bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent">Visual Craft.</span>
+</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Explore 350+ master visual commissions spanning royal wedding suites, obsidian gaming marks, and peak-CTR digital assets.
+      </p>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1 pb-1">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low/90 backdrop-blur-sm shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[15px]">category</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">7 Design Realms</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low/90 backdrop-blur-sm shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[15px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">350+ Works Shipped</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low/90 backdrop-blur-sm shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">4.9★ Client Score</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Search, Segmented Filters & Layout View Toggle -->
+<section class="px-gutter-sm pt-2 pb-3 flex flex-col gap-3 sticky top-16 z-30 bg-surface/75 backdrop-blur-xl">
+<!-- Frosted Search & Toggle Bar -->
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[19px]">search</span>
+</div>
+<input class="w-full pl-10 pr-9 py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-body-sm text-body-sm text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="portfolioSearch" placeholder="Search by theme, aesthetic..." type="text"/>
+<button aria-label="Clear Search" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant" id="clearSearchBtn">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- View Switcher (Grid vs List) -->
+<div class="flex items-center p-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex-shrink-0">
+<button aria-label="Grid View" class="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-on-primary transition-all shadow-xs" id="gridToggleBtn">
+<span class="material-symbols-outlined text-[17px]">grid_view</span>
+</button>
+<button aria-label="List View" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" id="listToggleBtn">
+<span class="material-symbols-outlined text-[17px]">view_agenda</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Category Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-gutter-sm px-gutter-sm pb-1">
+<button class="filter-pill active flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-on-primary shadow-md flex-shrink-0 transition-all font-label-md text-label-md" data-category="all">
+<span>All Works</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary text-[10px] font-semibold">307</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="wedding">
+<span>Wedding Suite</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">48</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="logo">
+<span>Business Logo</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">54</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="youtube">
+<span>YouTube CTR</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">85</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="gaming">
+<span>Gaming &amp; Esports</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">31</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="birthday">
+<span>Birthday Keepsakes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">36</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="engagement">
+<span>Engagement</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">28</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant hover:text-on-surface shadow-xs flex-shrink-0 transition-all font-label-md text-label-md" data-category="housewarming">
+<span>House Warming</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px]">25</span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: Category Philosophy Snap Carousel -->
+<section class="pt-2 pb-4">
+<div class="px-gutter-sm flex items-center justify-between mb-2">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">Creative Philosophy</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Optical Rules</span>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory px-gutter-sm pb-2">
+<!-- Philosophy 1: Wedding -->
+<div class="snap-start flex-shrink-0 w-64 p-3.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="w-1.5 h-full absolute left-0 top-0 bg-secondary"></div>
+<div class="flex items-center justify-between pl-1">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase">01 • Wedding</span>
+</div>
+<div class="pl-1 flex flex-col gap-0.5">
+<p class="font-headline-sm text-label-lg font-bold text-on-surface leading-snug">Royal Typographic Suites</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Cinematic royal typography &amp; gold foil choreography for ancestral unions.</p>
+</div>
+</div>
+<!-- Philosophy 2: Business -->
+<div class="snap-start flex-shrink-0 w-64 p-3.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="w-1.5 h-full absolute left-0 top-0 bg-primary"></div>
+<div class="flex items-center justify-between pl-1">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">token</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">02 • Corporate</span>
+</div>
+<div class="pl-1 flex flex-col gap-0.5">
+<p class="font-headline-sm text-label-lg font-bold text-on-surface leading-snug">Obsidian Geometric Identity</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Obsidian geometric systems &amp; vector grid marks built for high liquidity fintech.</p>
+</div>
+</div>
+<!-- Philosophy 3: YouTube CTR -->
+<div class="snap-start flex-shrink-0 w-64 p-3.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="w-1.5 h-full absolute left-0 top-0 bg-tertiary"></div>
+<div class="flex items-center justify-between pl-1">
+<span class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">smart_display</span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">03 • YouTube CTR</span>
+</div>
+<div class="pl-1 flex flex-col gap-0.5">
+<p class="font-headline-sm text-label-lg font-bold text-on-surface leading-snug">Cognitive Focus Pulling</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">High-CTR cognitive framing &amp; dynamic 4K light sweeps to dominate search feeds.</p>
+</div>
+</div>
+<!-- Philosophy 4: Gaming & Esports -->
+<div class="snap-start flex-shrink-0 w-64 p-3.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="w-1.5 h-full absolute left-0 top-0 bg-secondary-container"></div>
+<div class="flex items-center justify-between pl-1">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">sports_esports</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase">04 • Esports</span>
+</div>
+<div class="pl-1 flex flex-col gap-0.5">
+<p class="font-headline-sm text-label-lg font-bold text-on-surface leading-snug">Volumetric Mecha Systems</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Volumetric mecha emblems &amp; Twitch streaming visual packages calibrated for arena screens.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Mobile Showcase Portfolio Feed -->
+<section class="px-gutter-sm flex flex-col gap-4">
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Curated Gallery</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" id="itemsCounter">6 Highlights</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 font-semibold">
+        Sort: Featured <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Cards Container: Supports dynamic grid/list class toggle -->
+<div class="flex flex-col gap-4" id="galleryContainer">
+<!-- Card 1: Royal Celestial Rajputana Suite -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="wedding" data-title="Royal Celestial Rajputana Suite">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxurious Indian royal celestial Rajputana wedding invitation suite with intricate embossed gold foil leaf typography, deep midnight navy blue cardstock, delicate botanical Rajasthani motifs, astronomical starry constellation accents, soft diffused editorial studio lighting, light refracts through cut crystal prism on the corner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWnW4vgptp_AH48Q2nid3SCIpLjLd718o331FIIk6P5rXL2Ae_YS6DdhiwyTI1vOufZkfCmJDf-e6rk5ocXbIEgFAWZmOWmHpZFogQS5t1DjaT_h0x7OQihNrYiScFjRybncEInRGkKky987UCLRSbm1Vi1Sh0i7aXyGsjjuMulyvVBRN5tg5QPkgAn3h4sB1w6B-GlqxTrVyx8YQoQm14RFxaocVlv4YlIxl6y2Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Wedding Suite • 2025 Release</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: Kapoor &amp; Singhania</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/30 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">3D Vellum Deckle</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Royal Celestial Rajputana Suite</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Bespoke Rajputana royal gold leaf typography, astronomical constellations, and digital motion invitation for 3-day royal palace celebrations.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Gold Foil 3D</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Motion Invite</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Aetheria Esports Mascot & Badge -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="gaming" data-title="Aetheria Esports Mascot &amp; Badge">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic volumetric cyberpunk esports mascot logo design depicting a glowing cybernetic wolf in vivid electric cyan and neon ultraviolet purple, angular faceted metallic plates, holographic rim glow, dark carbon fiber textured background with electric atmospheric light particles, vector championship aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC08KYdAldLQqE3Xn-0zfStO_sCjxWnKSiwTBxk6NwaI6wFXVPFDnLzrxaec8JQjtOX4iElskMF2w3AnI-BV4tYb4h_wq5zVNescgdcI_CeqEsdyfIjbUAX0A4qVo7jEBbZdYHHWA2SyicYN5-DNFjEqVBa00plugOn5YGv9vGWH9WYyGoyk1heNGAEH-13i2lu-Q93XLWnmrZtZwC2DjdsMq8vD1kHNW8fHYaziKY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Gaming &amp; Twitch • Pro League</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: Team Aetheria Gaming EU</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/30 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Twitch Kit • 60 FPS</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Aetheria Esports Mascot &amp; Badge</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Angular cyber-creature logomark engineered for team jerseys, live streaming overlays, and animated vector stadium displays.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Vector Mascot</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Stream Overlay</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: $1,000,000 Escape Island Challenge -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="youtube" data-title="$1,000,000 Escape Island Challenge">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High energy hyper realistic YouTube thumbnail design for a survival challenge with intense dramatic 3-point rim lighting, hyper-contrasted expressive faces, saturated tropical turquoise ocean and stormy purple sky, glowing red laser timer graphics, explosive visual depth, cinematic color grade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV8onWbVkea6fSURzvnesFcQk7-ntuCE03gImOiQYpkzjzmHgdDct2FnSrzUN5kFiSkYvYPqGyAyRxoEzu8ym2URcLURfGZrcYasPONBz0Q-lcv1cR7b9yf1K_S7eNDzzNkv16pyQXh-xrFbXFaPXAfLDvCGLSOjCjAInOnu7hUgChv6RcgZQrqnNjZniJ28mAETzkOoB_gqHxupKhWFSET-MJidBXRO-iLT8VVJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">YouTube Thumbnail • 18.4% CTR Verified</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: 4.8M Creators</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm">A/B Tested Top 1%</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">$1,000,000 Escape Island Challenge</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Visual cognitive focus pulling with extreme color grading, hyper-contrasted expressions, and 4K directional light sweeps.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Psychology Color</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">4K Export</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Nexify Financial Brand Identity -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="logo" data-title="Nexify Financial Brand Identity">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Architectural corporate branding stationery mockup with obsidian matte business cards, silver hot-stamped geometric fin-tech monogram logo, crisp architectural grid paper, translucent vellum envelopes, serene soft daylight from an angled modern skyscraper window, premium minimal luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi3qEsRspfCGahDI9QS9MSx5CXzy1Mi4ff6nXf4w5Zg6zRnTuIwnXsaHxkkEr00w8J6mVM3Mv6JOBgGHV7R4xOEpVJo36zA_XFBvErhbEX07HHmPtwiTNF_tE5TgubGOLx7JonLI0RG4hWOvOvoxmEcW9yFEkf3G4-gFCLV8j9JbVDvxYIX2HXYpc7UzvjBaGVUK4Ljkaf1sV2qLuBL938STedruufn5N4cAA4apA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Business Logo • Global Scale</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: Nexify Corp</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/30 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Vector System</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Nexify Financial Brand Identity</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Optical weight calibrated for digital bank apps, contactless titanium cards, and multi-tier architectural signage.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Monogram Math</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Brand Book</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5: Botanical Bohemian Engagement Card -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="engagement" data-title="Botanical Bohemian Engagement Card">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Romantic delicate botanical engagement invitation card with torn deckle edge paper, sage green watercolor wash background, tactile blind embossed floral greenery, delicate metallic rose gold calligraphy lettering, lying on natural linen with dried eucalyptus leaves and morning sunbeams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0_FAY-KQ-KJsiYNkyn7CzelnT3_CtAqWyMz-nod-98FcxespC9dQ7f3rvmZp1KDWHNQrhYoR3-KZESWY2J6038Pp1Y7vd1Na3jHqGVNKMaqNReE0XTg0RoM3TJShz5V-Yvo2Id6-Yx4EBdlh-k76YPFDYW_CQ8XRlMwQFFnH474E-oI74f9rNJkHLvdU1DJ5_c5dxR17V2f2gq6aXwzpKjKWbhSBAF6och2iKhKM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Engagement • Vellum &amp; Foil</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: Aaron &amp; Nicole</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/30 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Blind Emboss</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Botanical Bohemian Engagement Card</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Gentle sage green gradients and tactile blind embossing designed for sunlit garden ceremonies and intimate gatherings.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Hand-Lettered</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Deckle Edge</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 6: CyberPulse Twitch Streaming Logo -->
+<article class="gallery-card group flex flex-col rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md overflow-hidden transition-all duration-300" data-category="gaming" data-title="CyberPulse Twitch Streaming Logo">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic neon holographic tiger esports emblem logomark, glowing cyan and electric magenta accents, sharp geometric facets, hyper-clean vector styling, displayed against a dark blurred gaming studio backdrop with purple backlights, crisp glossy highlights and prism light reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk9w5J292vZ_sRpl_5bwWTz-asS8WWVNGvJPBVUvguDp9UfucwMYOBbYVYq3s32sWZoS3yvpmTWJBtpee4g6Okpkl8Lql3xORslytC1jzaa-E_m39imW-StuIlUrIDzJbczMgqfJKmwsshkMU5XSPKdPAqSUkXEfL1bKiTbUa4Rj5DRcD0PgyqdVUDdkSxIDJAd9e_71P5QqUqDU9fetGvLOhMjvPc411DmC0IJOg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Esports Mascot • Animated Vector</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-tertiary">
+<span class="font-label-md text-label-md opacity-90">Client: @CyberPulseX</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/30 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Arena Scaled</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">CyberPulse Twitch Streaming Logo</h2>
+<button aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Volumetric mecha mascot optimized for micro favicons through to 4K LED stadium banners with motion vectors.
+          </p>
+<div class="pt-1 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mascot Grid</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Stream Overlay</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm hover:shadow-md transition-all active:scale-95">
+<span>Details</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State for Search Filter (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-12 px-6 rounded-2xl bg-surface-container-lowest/60 backdrop-blur-md text-center gap-3" id="noResultsState">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">No Works Found</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+        No projects match your current keyword or realm filter. Try clearing filters to see the full studio archive.
+      </p>
+<button class="mt-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm" id="resetFiltersBtn">
+        Reset All Filters
+      </button>
+</div>
+</section>
+<!-- SECTION 5: Live Cloud Synchronization Bar -->
+<section class="px-gutter-sm pt-4 pb-2">
+<div class="p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-xs flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Live Studio Gallery Cloud</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Synced with Firebase Storage • 0.18s latency</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary flex items-center gap-1 flex-shrink-0 transition-colors" id="syncRefreshBtn">
+<span class="material-symbols-outlined text-[15px]" id="syncIcon">sync</span>
+<span class="font-label-sm text-label-sm font-semibold">Sync</span>
+</button>
+</div>
+</section>
+<!-- SECTION 6: Fast Commission Mobile CTA Drawer Card -->
+<section class="px-gutter-sm pt-2 pb-6">
+<div class="p-5 rounded-3xl bg-gradient-to-br from-surface-container-lowest/95 via-surface-container-lowest/80 to-surface-variant/40 backdrop-blur-2xl shadow-xl flex flex-col gap-4 relative overflow-hidden">
+<!-- Decorative Prism Specular Accent -->
+<div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-primary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-xs">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Fast Turnaround Available</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-snug">
+          Ready to curate your bespoke visual suite?
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Book immediate priority Q3 design sprints. Average turnaround of 24–48 hours for vector logos and YouTube high-CTR suites.
+        </p>
+</div>
+<div class="flex flex-col gap-2.5 pt-1">
+<a class="w-full py-3.5 px-5 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98]" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Start Project via WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<button class="w-full py-3 px-5 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface flex items-center justify-center gap-2 font-label-md text-label-md font-semibold transition-all">
+<span class="material-symbols-outlined text-primary text-[18px]">calculate</span>
+<span>Calculate Custom Quote</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-3 pt-1 text-on-surface-variant font-body-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">format_image_left</span> 100% Vector Vector Files
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span> Rapid 48h Delivery
+        </span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function initPortfolioShowcase() {
+    const searchInput = document.getElementById('portfolioSearch');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.gallery-card');
+    const galleryContainer = document.getElementById('galleryContainer');
+    const gridToggleBtn = document.getElementById('gridToggleBtn');
+    const listToggleBtn = document.getElementById('listToggleBtn');
+    const itemsCounter = document.getElementById('itemsCounter');
+    const noResultsState = document.getElementById('noResultsState');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const syncRefreshBtn = document.getElementById('syncRefreshBtn');
+    const syncIcon = document.getElementById('syncIcon');
+
+    let currentCategory = 'all';
+    let currentSearchTerm = '';
+    let isGridView = false;
+
+    // Filter Logic
+    function applyFilters() {
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const textContent = card.innerText.toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || category === currentCategory);
+        const matchesQuery = !currentSearchTerm || 
+                             title.includes(currentSearchTerm) || 
+                             textContent.includes(currentSearchTerm);
+
+        if (matchesCat && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      itemsCounter.textContent = `${visibleCount} ${visibleCount === 1 ? 'Highlight' : 'Highlights'}`;
+
+      if (visibleCount === 0) {
+        noResultsState.classList.remove('hidden');
+        noResultsState.classList.add('flex');
+      } else {
+        noResultsState.classList.add('hidden');
+        noResultsState.classList.remove('flex');
+      }
+    }
+
+    // Category click handler
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-md');
+          p.classList.add('bg-surface-container-lowest/80', 'text-on-surface-variant', 'shadow-xs');
+          const counter = p.querySelector('span:last-child');
+          if (counter) {
+            counter.classList.remove('bg-on-primary/20', 'text-on-primary');
+            counter.classList.add('bg-surface-container', 'text-on-surface-variant');
+          }
+        });
+
+        pill.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-md');
+        pill.classList.remove('bg-surface-container-lowest/80', 'text-on-surface-variant', 'shadow-xs');
+        const activeCounter = pill.querySelector('span:last-child');
+        if (activeCounter) {
+          activeCounter.classList.add('bg-on-primary/20', 'text-on-primary');
+          activeCounter.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        }
+
+        currentCategory = pill.getAttribute('data-category') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Search input handler
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearchTerm = e.target.value.trim().toLowerCase();
+        if (currentSearchTerm.length > 0) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+        applyFilters();
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentSearchTerm = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+        searchInput.focus();
+      });
+    }
+
+    if (resetFiltersBtn) {
+      resetFiltersBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          currentSearchTerm = '';
+          clearSearchBtn.classList.add('hidden');
+        }
+        if (filterPills.length > 0) {
+          filterPills[0].click();
+        }
+      });
+    }
+
+    // Grid vs List view switcher
+    if (gridToggleBtn && listToggleBtn) {
+      gridToggleBtn.addEventListener('click', () => {
+        if (!isGridView) {
+          isGridView = true;
+          gridToggleBtn.classList.add('bg-primary', 'text-on-primary');
+          gridToggleBtn.classList.remove('text-on-surface-variant');
+          listToggleBtn.classList.remove('bg-primary', 'text-on-primary');
+          listToggleBtn.classList.add('text-on-surface-variant');
+
+          galleryContainer.classList.remove('flex', 'flex-col');
+          galleryContainer.classList.add('grid', 'grid-cols-2', 'gap-3');
+
+          cards.forEach(card => {
+            const imgContainer = card.querySelector('.relative.w-full');
+            if (imgContainer) {
+              imgContainer.classList.remove('h-56');
+              imgContainer.classList.add('h-36');
+            }
+          });
+        }
+      });
+
+      listToggleBtn.addEventListener('click', () => {
+        if (isGridView) {
+          isGridView = false;
+          listToggleBtn.classList.add('bg-primary', 'text-on-primary');
+          listToggleBtn.classList.remove('text-on-surface-variant');
+          gridToggleBtn.classList.remove('bg-primary', 'text-on-primary');
+          gridToggleBtn.classList.add('text-on-surface-variant');
+
+          galleryContainer.classList.add('flex', 'flex-col');
+          galleryContainer.classList.remove('grid', 'grid-cols-2', 'gap-3');
+
+          cards.forEach(card => {
+            const imgContainer = card.querySelector('.relative.w-full');
+            if (imgContainer) {
+              imgContainer.classList.add('h-56');
+              imgContainer.classList.remove('h-36');
+            }
+          });
+        }
+      });
+    }
+
+    // Cloud Sync micro-interaction
+    if (syncRefreshBtn && syncIcon) {
+      syncRefreshBtn.addEventListener('click', () => {
+        syncIcon.classList.add('animate-spin');
+        syncRefreshBtn.disabled = true;
+        setTimeout(() => {
+          syncIcon.classList.remove('animate-spin');
+          syncRefreshBtn.disabled = false;
+        }, 1000);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(19,27,46,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-between h-20 px-gutter-sm"><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">diamond</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 transition-colors text-primary font-semibold" data-path="portfolio" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome_motion</span><span class="font-label-sm text-label-sm">Portfolio</span></a><div class="relative -top-3 flex items-center justify-center"><a aria-label="WhatsApp Quick Action" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(0,97,148,0.28)] hover:bg-primary-container transition-all active:scale-95" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[22px]">chat</span></a></div><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[22px]">layers</span><span class="font-label-sm text-label-sm">Services</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[22px]">alternate_email</span><span class="font-label-sm text-label-sm">Contact</span></a></div></nav></body></html>

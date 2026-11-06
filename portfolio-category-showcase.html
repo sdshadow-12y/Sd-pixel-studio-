@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#3d0026", "on-primary-fixed": "#001d31", "error-container": "#ffdad6", "on-tertiary-fixed": "#001e2c", "surface-container-lowest": "#ffffff", "tertiary-container": "#007da9", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "error": "#ba1a1a", "on-background": "#131b2e", "surface": "#faf8ff", "surface-container-highest": "#dae2fd", "inverse-surface": "#283044", "inverse-primary": "#93ccff", "background": "#faf8ff", "secondary": "#a43073", "secondary-fixed": "#ffd8e7", "primary-fixed-dim": "#93ccff", "on-surface-variant": "#3f4850", "on-primary-fixed-variant": "#004b73", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffafd3", "on-secondary-fixed-variant": "#85145a", "on-tertiary-fixed-variant": "#004c69", "tertiary-fixed": "#c4e7ff", "tertiary-fixed-dim": "#7bd0ff", "on-error": "#ffffff", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-container": "#fcfcff", "on-surface": "#131b2e", "surface-container-high": "#e2e7ff", "primary-fixed": "#cce5ff", "on-error-container": "#93000a", "secondary-container": "#fc79bd", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-secondary": "#ffffff", "on-secondary-container": "#76014e", "outline": "#707881", "primary": "#006194", "tertiary": "#006387", "surface-tint": "#006398", "on-primary-container": "#fdfcff", "primary-container": "#007bb9", "surface-container": "#eaedff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "gutter-sm": "1rem", "gutter-lg": "2rem", "space-xs": "0.375rem", "margin-desktop": "4rem", "space-lg": "2rem", "margin": "2rem", "space-sm": "0.75rem", "space-xl": "3.5rem", "margin-mobile": "1.25rem", "space-md": "1.25rem" }, "fontFamily": { "display-xl-mobile": [ "Syne" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Syne" ], "body-md": [ "Plus Jakarta Sans" ], "display-xl": [ "Syne" ], "label-lg": [ "Inter" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Syne" ], "label-md": [ "Inter" ], "label-sm": [ "Inter" ], "headline-md": [ "Syne" ] }, "fontSize": { "display-xl-mobile": [ "40px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "800" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-xl": [ "72px", { "lineHeight": "78px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-sm": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "48px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "headline-md": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none overflow-hidden z-0"><div class="absolute -top-32 -left-20 w-[42rem] h-[42rem] rounded-full bg-primary-fixed/35 blur-3xl"></div><div class="absolute top-1/4 -right-32 w-[38rem] h-[38rem] rounded-full bg-secondary-fixed/30 blur-3xl"></div><div class="absolute top-3/4 left-1/3 w-[46rem] h-[46rem] rounded-full bg-tertiary-fixed/30 blur-3xl"></div><div class="absolute inset-0 bg-radial from-transparent via-surface/40 to-surface/80"></div></div><header class="fixed top-0 inset-x-0 z-50 transition-all duration-300"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-space-xs"><div class="h-20 rounded-full bg-surface-container-lowest/70 backdrop-blur-xl px-space-md lg:px-space-lg flex items-center justify-between shadow-[0_8px_32px_-4px_rgba(19,27,46,0.06),0_2px_8px_-2px_rgba(19,27,46,0.03)]"><div class="flex items-center gap-space-sm"><img alt="SD Pixel Studio Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/><span class="font-headline-md text-headline-sm text-on-surface tracking-tight font-bold hidden sm:inline-block">SD Pixel Studio</span></div><nav class="hidden lg:flex items-center p-1.5 rounded-full bg-surface-container-high/60 backdrop-blur-md gap-1" data-active-classes="bg-surface-container-lowest text-primary shadow-[0_4px_16px_rgba(0,97,148,0.12)] font-semibold"><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="home" href="#">Home</a><a aria-current="page" class="px-space-md py-1.5 rounded-full transition-all duration-200 bg-surface-container-lowest text-primary shadow-[0_4px_16px_rgba(0,97,148,0.12)] font-semibold" data-path="portfolio" href="#">Portfolio</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="categories" href="#">Categories</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="services" href="#">Services</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="about" href="#">About</a><a class="px-space-md py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high/70 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" href="#"><span class="material-symbols-outlined text-[16px] text-tertiary">chat</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Inquire</span></a><a class="px-space-md py-2.5 rounded-full bg-gradient-to-r from-primary to-tertiary-container hover:from-primary-container hover:to-tertiary text-on-primary font-label-md text-label-md shadow-[0_8px_20px_-4px_rgba(0,97,148,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" data-path="contact" href="#">Book Project</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Ambient Liquid Glow Nodes (Scoped) -->
+<div class="absolute -top-16 left-1/4 w-[36rem] h-[36rem] rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-[42rem] right-10 w-[32rem] h-[32rem] rounded-full bg-secondary-fixed/25 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-[30rem] left-12 w-[38rem] h-[38rem] rounded-full bg-tertiary-fixed/20 blur-3xl pointer-events-none -z-10"></div>
+<!-- SECTION 1: Editorial Header & Atmospheric Ripple Accent -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-8 pb-10 w-full">
+<!-- Concentric Water Ripple SVG Vector Art Motif -->
+<div class="flex items-center justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full text-primary/30 animate-pulse" fill="none" viewbox="0 0 40 40">
+<circle cx="20" cy="20" r="18" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.2"></circle>
+<circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.4"></circle>
+<circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.6"></circle>
+</svg>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_12px_rgba(0,97,148,0.8)]"></span>
+</div>
+<span class="font-label-sm text-label-sm tracking-widest text-primary font-bold uppercase">Archive &amp; Visual Works</span>
+</div>
+<!-- Live Sync Pill -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-tight">SD Studio Engine v4.2 • Cloud Synced</span>
+</div>
+</div>
+<!-- Main Title & Studio Metrics Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8">
+<div class="lg:col-span-8 space-y-4">
+<h1 class="font-display-xl text-display-xl text-on-surface tracking-tight leading-none">
+          Curated Works &amp; <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary-container to-secondary">Visual Craft.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Explore our diverse catalog of high-impact visual design across bespoke royal wedding suites, obsidian corporate brand marks, and peak-CTR digital assets.
+        </p>
+</div>
+<!-- Studio Metrics Badges -->
+<div class="lg:col-span-4 flex flex-wrap lg:justify-end gap-2.5">
+<div class="px-4 py-2.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex items-center gap-3">
+<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">category</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">7</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Design Realms</div>
+</div>
+</div>
+<div class="px-4 py-2.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex items-center gap-3">
+<div class="w-8 h-8 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">350+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Works Shipped</div>
+</div>
+</div>
+<div class="px-4 py-2.5 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-md flex items-center gap-3">
+<div class="w-8 h-8 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">4.9★</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Client Score</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Liquid Glass Navigation & Interactive Controls Bar -->
+<div class="mt-4 p-2.5 rounded-3xl bg-surface-container-lowest/75 backdrop-blur-2xl shadow-xl flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-4">
+<!-- Scrollable Category Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 px-1" id="categoryTabs">
+<button class="cat-pill active flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md bg-on-background text-on-primary shadow-md whitespace-nowrap transition-all duration-300" data-cat="all">
+<span>All Works</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-white/20 text-white font-semibold">307</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="wedding">
+<span>Wedding Invitation</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">48</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="birthday">
+<span>Birthday</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">36</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="engagement">
+<span>Engagement</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">28</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="house-warming">
+<span>House Warming</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">22</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="business-logo">
+<span>Business Logo</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">54</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="gaming-logo">
+<span>Gaming Logo</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">31</span>
+</button>
+<button class="cat-pill flex items-center gap-2 px-4 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 whitespace-nowrap transition-all duration-300" data-cat="youtube">
+<span>YouTube Thumbnail</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">85</span>
+</button>
+</div>
+<!-- Search Input & Display Toggle -->
+<div class="flex items-center gap-2.5 px-1 shrink-0">
+<div class="relative flex items-center min-w-[240px] xl:w-72">
+<span class="material-symbols-outlined text-[18px] text-outline absolute left-3.5 pointer-events-none">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-full bg-surface-container-high/40 text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all duration-200" id="gallerySearch" placeholder="Search by theme, aesthetic..." type="text"/>
+</div>
+<div class="hidden md:flex items-center p-1 bg-surface-container-high/50 rounded-full">
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm transition-colors" id="viewGrid" title="Grid Matrix">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" id="viewEditorial" title="Editorial Flow">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Category Spotlight Featurettes (Horizontal Fluid Floating Cards) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-6 w-full">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary">diamond</span>
+<h2 class="font-headline-md text-headline-sm font-bold text-on-surface">Category Spotlights</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Hover to preview aesthetic philosophy</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Spotlight 1 -->
+<div class="group relative p-5 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-secondary-fixed/30 group-hover:scale-150 transition-transform duration-500 blur-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider px-2.5 py-1 rounded-full bg-secondary-fixed/50">48 CRAFTS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1.5">Wedding Suites</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+            Cinematic royal typography, gold foil textures &amp; bespoke interactive video reveals.
+          </p>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md text-secondary font-semibold group-hover:gap-3 transition-all">
+<span>Inspect Category</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Spotlight 2 -->
+<div class="group relative p-5 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-primary-fixed/30 group-hover:scale-150 transition-transform duration-500 blur-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wider px-2.5 py-1 rounded-full bg-primary-fixed/50">54 CRAFTS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1.5">Business Logos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+            Precision geometric identity systems, obsidian iconography &amp; vector stationery suites.
+          </p>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md text-primary font-semibold group-hover:gap-3 transition-all">
+<span>Inspect Category</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Spotlight 3 -->
+<div class="group relative p-5 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-tertiary-fixed/30 group-hover:scale-150 transition-transform duration-500 blur-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">smart_display</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wider px-2.5 py-1 rounded-full bg-tertiary-fixed/50">85 CRAFTS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1.5">YouTube Thumbnails</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+            High-CTR cognitive psychology, dynamic light sweeps, and 4K color grading dynamics.
+          </p>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md text-tertiary font-semibold group-hover:gap-3 transition-all">
+<span>Inspect Category</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Spotlight 4 -->
+<div class="group relative p-5 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-secondary-container/20 group-hover:scale-150 transition-transform duration-500 blur-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="w-10 h-10 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">sports_esports</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider px-2.5 py-1 rounded-full bg-secondary-fixed/50">31 CRAFTS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1.5">Gaming &amp; Esports</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+            Cybernetic crests, mecha illustrations, and holographic Twitch visual identities.
+          </p>
+</div>
+<button class="flex items-center gap-2 font-label-md text-label-md text-secondary font-semibold group-hover:gap-3 transition-all">
+<span>Inspect Category</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Master Liquid Glass Portfolio Showcase (12 Curated Artifacts) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-8 w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500" id="galleryContainer">
+<!-- Item 1: Royal Celestial Wedding Invitation Suite -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="wedding" data-title="Royal Celestial Wedding Invitation Suite">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Exquisite royal Indian celestial wedding invitation stationery set featuring intricate gold foil stamping, deep sapphire blue and warm ivory cardstock, ornate Rajput filigree borders, and luxury envelope packaging styled on a marble desk with warm editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CT_DPEDN84lJ_2d7Rz-2AMKSL5a5KZ12OqishzeN2cujlae1D-VqKIsWfUtlQuiS71EJOl1oO6O9ZZjoHYEnnqtiBf9vsBSD4HPeATq37P4X1-n9XHuarZmNVuFY2sdP37ik_n_2ay1XQ4UjREP6oR3P0vxLBp4_U03QDHNqabC_ZAmOdI74qWqkzOkMLJTzy2r2g_wWdYnzw8KGz_yq7f2sj3xD5XTPIW9zzEg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md" onclick="openModal()">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Royal Suite
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Print &amp; Motion Video
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Wedding Suite</span>
+<span>2025 Release</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Royal Celestial Wedding Invitation Suite
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Bespoke Rajputana royal gold leaf typography, astronomical constellations, and digital motion MP4 cards.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Client: Kapoor &amp; Singhania</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1" onclick="openModal()">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2: Aetheria Esports Mascot & Badge -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="gaming-logo" data-title="Aetheria Esports Mascot &amp; Badge">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High-end cybernetic gaming mascot emblem featuring a futuristic neon-cyan and magenta mecha lynx warrior on a sleek obsidian glass shield with glowing vector geometric accents and crisp esport typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVbJLDzzcCbcrto4PYsYTBBH2sxTkbYCeWXuULgFbvyBsvTMBpqGiEMX0g8hqXDAWiqYwHy1EYmhjRKC9cyrABa1OfTx3lEmaIsSoYfc6GBnyru4l0jCbtBNXaL6l3oZIKExJBKRdUNDFicrwT3w6h72ymIHx18tE8698vYGuCqLrctpU3lLwESGKk0wBcueuj_yXIhFCLPZhbjfRkaXf5ZL32zVfO-dDer44AF0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Identity
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold shadow-sm">
+            Gaming &amp; Twitch
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Gaming Logo</span>
+<span>Pro League</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Aetheria Esports Mascot &amp; Badge
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Angular cyber-creature logomark engineered for team jerseys, live streaming overlays, and animated vector stings.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Team: Aetheria Gaming EU</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 3: Nexify Financial Brand Identity -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="business-logo" data-title="Nexify Financial Brand Identity">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Modern fintech corporate brand identity mockup featuring an ultra-clean geometric 'N' monogram rendered in dual sky blue and deep navy blue gradients displayed on premium cotton business cards and debossed letterhead." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBff_gtGfDo8VQaulq17Qbr07PGfSdfsyXPRaubloJw6vdKeTAl6hIx0J2wRf6MRhteNtD5IxZagF3gphivvPCoUnn39i2oys2PD8Pn2229aLkbilrtXjFhCPFqg0wafonO18Lyl3v-s4B5P285PXxREe3awnOCfVAruork5oThK1OCbhULm0ZNxy5gqqGstxPth2qdC2AY7WoJx_4FXAm7QH93VgKeSTBv7x-VM7M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Identity
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Fintech Brand Mark
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Business Logo</span>
+<span>Global Scale</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Nexify Financial Brand Identity
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Optical weight calibrated for digital bank apps, credit cards, and multi-tier architectural signage.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Client: Nexify Corp</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 4: MrBeast Style Extreme Challenge Thumbnail -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="youtube" data-title="MrBeast Style Extreme Challenge Thumbnail">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High-impact dynamic YouTube video thumbnail design with vibrant hyper-saturated colors, dramatic wide-angle facial expression, glowing cyan and amber laser accents, high contrast bold 3D typography stating 100 HOURS, and crisp rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1b7GgYATIvJXzmIxkcZim2ow2TZTA3IorldCheiPOaqnV8G9SUjaS6vSyamc3Zuv4DoZGn5MBKY5VeQQQEGIvsaf5MqDXuKxy0H8K2p7PMR3g7LaReXsmYqZKNEPULGVOlLY6VR6q1FS9QvuUxCBBYAClUVe6ucw9_9SppMUn_W6sNMA4wx5-s0MH2nvGaGwn2pnP49uy4beSeaoQuGUOtilDkzDtpy7hoQ3t6o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Asset
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-md">
+            18.4% CTR Verified
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>YouTube Thumbnail</span>
+<span>Viral Engineering</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              $1,000,000 Island Escape Challenge
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Visual cognitive focus pulling with extreme color grading, 3-point rim luminescence, and high-read typography.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Channel: 4.8M Creators</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 5: Botanical Bohemian Engagement Card -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="engagement" data-title="Botanical Bohemian Engagement Card">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Chic bohemian engagement celebration card layout featuring pressed eucalyptus foliage, real gold foil calligraphy accents, semi-transparent frosted vellum wrap, and handmade deckled edge paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpING2TPgz5vAmHCkQpi5yglBEwmQu5BB3GV3i1ANI14qTgsJIhAjyvWYvWlnvdxPelUTARkAlS0hpoU6o-UkMcjr3jyMJq6JPaefAhUNbF5pWeKMw9QqFTCjRcFg1qqj6wJt8Y-kJtcVBlO9N5yEewUDu064IFa6snC_kGfoWWkXyGcIQpnn7wrWs9jb3MNFyKXQH1bzO16EH5Nah3zwWq3DkO7sYdECbAXMGn80"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Card
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-tertiary font-label-sm text-label-sm font-bold shadow-sm">
+            Vellum &amp; Foil
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Engagement</span>
+<span>Bespoke Handcrafted</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Botanical Bohemian Engagement Card
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Gentle sage green gradients and tactile blind embossing designed for sunlit garden ceremonies.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Couple: Aaron &amp; Nicole</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 6: Golden Horizon House Warming Vastu Suite -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="house-warming" data-title="Golden Horizon House Warming Vastu Suite">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Warm terracotta and auspicious sun-gold ceremonial house warming Griha Pravesh invitation card featuring laser-cut mandala gates, lotus geometry, and sacred Sanskrit motifs on premium handmade paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2BjjofoAnkB3xw95BM7VAj9VdlvlHu8Q9jw9MwD4VnsYEHaRAEQqWZTyukQjcCGIFYhhGMUGorGuPnh8RnQVB2eQucNexa6CkyQamAY5NheFzzujXO75vYvN2YJ5ocwBDrsNnIwNxALCegQwihj0l1YpBRWJRbiOTJvp3cdO4LobHj68AqIVpfqCK7FfJ75QsqXLIreX0HRFAJA5iN0kNvlfxbtWvWLsfVymPkOc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Suite
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Griha Pravesh
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>House Warming</span>
+<span>Sacred Vastu</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Golden Horizon House Warming Suite
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Harmonious mandala geometry blended with contemporary editorial typography and animated RSVP tracking.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Residence: The Sky Villa</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 7: Enchanted Forest 1st Birthday Invite -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="birthday" data-title="Enchanted Forest 1st Birthday Invite">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Dreamy whimsical pastel watercolor children birthday invitation featuring gentle woodland creatures, illuminated fairy mushrooms, golden dust sparkles, and playful 3D frosted glass lettering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN3-3e3JLGNIqXBBXIcW82pBfmCtZQaUKhLqmIkuvvXeQzTKblG_67ZTZGLbqHVXqDB7Uito3wGg_J7x6hq7DHzFe3oaKnaBsqf2nI22NbHW4n7gAMNOjkHVF5Wko5yJm5SvZ6m8KVLRzbaadSIPN4fxUsnde0_v888V1dxM6a6c9sgajAfyFcdFQgLIkYgLtnOHyxsVBbKKZYLvgER-gcaA-0PH1kNLKPGJYN6gU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Card
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold shadow-sm">
+            Pastel 3D
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Birthday</span>
+<span>1st Jubilee</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Enchanted Forest 1st Birthday Invite
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Whimsical hand-painted flora and fauna infused with playful soft illumination for baby milestone celebrations.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Family: Maya's 1st Wonder</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 8: Vortex Tech YouTube Thumbnail Pack -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="youtube" data-title="Vortex Tech YouTube Thumbnail Pack">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High-end tech gadget review YouTube thumbnail featuring illuminated transparent smartphone hardware, moody studio cyc lighting with electric cyan and magenta reflections, sharp obsidian specs typography, and crisp depth-of-field blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6vzwFaoPwWspKO98xyT6ZJgG4ljKYN5IdmENVB82Q-jERMnnbuJBO-X8iuR9ag-Sa4W2sGKzlX_DalcXmiq__Mg_SYTFdWX9HuDo-3tWbqq36F1hBJOJIcKn7BTIftIPL4BBQT2GczFx5eAZfNp4z4GG1o2JHfAx-Hahw9z-UHBRWN0N7f_hlHwTk0dJN6QkaOkL9qd0X0-YQy8nYPeD1mpvPjNGiufZUNRjoGsc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Pack
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Tech &amp; Hardware
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>YouTube Thumbnail</span>
+<span>Hardware Reviews</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Vortex Tech YouTube Thumbnail Pack
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Sleek glass hardware highlights, dynamic spec overlays, and clinical high-contrast dark room aesthetics.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tech Channel: Synapse Reviews</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 9: Komorebi Artisan Cafe Branding -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="business-logo" data-title="Komorebi Artisan Cafe Branding">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Japanese minimalist artisan coffee brand identity mockup including wooden stamp seal, raw textured linen coffee bag, debossed clay cup, and delicate kanji-inspired modern logomark bathed in soft morning window light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBENSEFLKJ2Z0pdeAHQacv47_EGApaNqMVHpPESbSu0FXSeNvYWjcy8kMGxkidy1nL__sAdWBAvX1Rkg5-FvZIWnxm2h9R2pSSzzs3f4JuQHL6UfEhMdTubcPAjcOgKnoGlC3tn48GQnpKKWpopEHZ3Iwn6EOq_mOyno-TPN3xqvSFc1cFM6knPsLMZ1GB0wnGEbouizaW7fS3H9eEQZmusaCX7St9bOEUbMkzxhy8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Brand
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-tertiary font-label-sm text-label-sm font-bold shadow-sm">
+            Hospitality Mark
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Business Logo</span>
+<span>Artisanal</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Komorebi Artisan Cafe Branding
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Serene Japanese negative space identity balanced with tactile earth tones and custom editorial typographic seals.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Roastery: Komorebi Kyoto</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 10: Majestic Rajputana Regal Wedding Scroll -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="wedding" data-title="Majestic Rajputana Regal Wedding Scroll">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Traditional velvet and carved metallic cylindrical casing containing an unrolled heritage Indian royal wedding scroll invitation adorned with real gold leaf borders, peacock miniature art, and calligraphy in jewel tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGbS6EGKz2X4sUGTXp-SLLEY0pRxScQBdxYRDx6J-DTlrcHaRXLNvHhxslno6gtzI_XbLg1iqYO_foiGbinbDkJRP2usNORQzPlJtctKLEIExUkun7A8w8TmKBg52QMi2o1jHEl7wpnjlHaPThD_98z5QvoKzQ9L70Q7pxLcvTgXVRR7O2Inn2pZWtUC3H2nb7FW-ews92egYXzNuCin2lblLy7b8StKXZ98Bm56w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Scroll
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Velvet &amp; Scroll
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Wedding Suite</span>
+<span>Heritage Heritage</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Majestic Rajputana Regal Wedding Scroll
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Hand-painted heritage motifs converted to high-definition vector matrices for grand royal destination nuptials.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Udaipur Palace Wedding</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 11: CyberPulse Twitch Streaming Logo -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="gaming-logo" data-title="CyberPulse Twitch Streaming Logo">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Luminescent sci-fi mecha fox mascot logo with glowing violet and electric sky blue energy lines, futuristic typography, and glossy glass badge reflections designed for Twitch and Discord communities." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqJI95pkME1LHEKiK4aPHUNIR4rgVR0nnHoLZ8pERSo58hUrdXjAj6PTSr6x_pL78BchlbVlA-DhpSpM-7rNGm7IrINUGAPvPe6AaBL4XOAYPEsBDWuagmgKvf0ZphWm7lye7ivApYvj8CPJT0E-tT7fbq1NrFHZDr2FTtpbv76VAh5PZNP-cFDthYbXISK-3iTUj5r-tlpP0k85YwcJ8CSP7ftHFJemmfWKLiw3I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Logo
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold shadow-sm">
+            Stream Brand
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Gaming Logo</span>
+<span>Animated Vector</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              CyberPulse Twitch Streaming Logo
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Volumetric mecha mascot optimized for 16x16 pixel micro favicons through to 4K LED event banners.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Streamer: @CyberPulseX</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 12: Pastel Balloons & Confetti 18th Birthday -->
+<article class="portfolio-item group rounded-3xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col" data-category="birthday" data-title="Pastel Balloons &amp; Confetti 18th Birthday">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Chic millennial 18th birthday celebration digital invitation with liquid glass chrome typography, soft peach and lilac 3D floating balloons, holographic confetti, and elegant frosted card border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1U15RBl2QFtHLAMSvkdMQLJwG_vjavxYxteNmY820AHVlIIYp_lrVgpm7fxxcEPOFrp0HOTQw89NnudIq1j-ayB_kaxvuf4A-M8-t6BB7hjYAg9frDfZW4YKWtBevXEU1dh8zTnpjGqWg_K283OM1XDsEt1ht6Xrh7GNg98GksV1b_uHm5S_llh74DQLD-vwD-2jdrU4psN-P3OY3Prhs5FMe5NruPLMOPrUw1jw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              Inspect Invite
+            </button>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold shadow-sm">
+            Liquid Chrome 3D
+          </span>
+</div>
+<div class="p-3.5 flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Birthday</span>
+<span>18th Milestone</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors">
+              Pastel Glass 18th Birthday Invitation
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Fluid liquid metal reflections combined with delicate lilac glass bubbles and live calendar RSVP links.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Private Client: Tara Verma</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+              Details <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 4: Interactive Full-Screen Lightbox Preview (Liquid Glass Modal) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-on-background/50 backdrop-blur-2xl opacity-0 pointer-events-none transition-opacity duration-300" id="lightboxModal">
+<div class="relative w-full max-w-5xl max-h-[921px] rounded-3xl bg-surface-container-lowest/90 backdrop-blur-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row transform scale-95 transition-transform duration-300">
+<!-- Close Floating Button -->
+<button class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface flex items-center justify-center shadow-md transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<!-- Media Visual Side -->
+<div class="w-full lg:w-3/5 bg-surface-container relative flex items-center justify-center p-6 sm:p-8 overflow-hidden min-h-[320px]">
+<img class="w-full h-full object-contain max-h-[716px] rounded-2xl shadow-xl" data-alt="Ultra-detailed macro photograph of royal celestial wedding invitation suite showing raised tactile gold foil stamping on pristine textured navy paper with intricate celestial constellations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXazi3T2Wbqb3wgN2kOBq_TDeYTnGX30gxk44-Q5v63TzFxThAP1kWN8KgMCshXCD8Ua8rV_fiatyQ5rXf0LAe2ipxe8q64GmZNPLd9Dl4JQyaaiSYMvMf15kQl4MDpQbZ__qB93nMRqExehKkabeAjVckVb83DSZxfsYFuR4FOnIY6WNYync1ADiMRxtkM9nRsGQgs-5eqNZaBWfqgc-lShQ1BIAIp1t4lZuSXf0"/>
+<!-- Navigation Arrow Controls -->
+<button class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface hover:text-primary flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface hover:text-primary flex items-center justify-center shadow-md transition-all">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Studio Metadata & WhatsApp Action Panel -->
+<div class="w-full lg:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-surface-container-lowest/90">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Wedding Suite
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Artifact #WD-2025-08</span>
+</div>
+<h3 class="font-headline-md text-headline-sm font-bold text-on-surface">
+            Royal Celestial Wedding Suite
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Crafted for an ethereal palace destination wedding in Rajasthan. Includes print-ready heavy-weight letterpress files, animated WhatsApp vertical video invitations, and interactive web RSVP.
+          </p>
+<!-- Design Spec Attributes Grid -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3 rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Turnaround</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">4 Working Days</span>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Deliverables</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">PDF, MP4, Web RSVP</span>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Resolution</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">300 DPI / 4K UHD</span>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Licensing</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Full Commercial</span>
+</div>
+</div>
+<!-- Color Swatches Display -->
+<div class="pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-2">Curated Color Harmony</span>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#0B1B3D] shadow-sm flex items-center justify-center text-[10px] text-white font-mono" title="Midnight Navy">#0B</div>
+<div class="w-8 h-8 rounded-full bg-[#D4AF37] shadow-sm flex items-center justify-center text-[10px] text-black font-mono" title="Imperial Gold">#D4</div>
+<div class="w-8 h-8 rounded-full bg-[#F5F2EB] shadow-sm flex items-center justify-center text-[10px] text-black font-mono" title="Ivory Vellum">#F5</div>
+<div class="w-8 h-8 rounded-full bg-[#2A4365] shadow-sm flex items-center justify-center text-[10px] text-white font-mono" title="Lapis Accent">#2A</div>
+</div>
+</div>
+</div>
+<!-- WhatsApp Direct Inquiry Button -->
+<div class="pt-6 mt-6 bg-surface-container-low/40 -mx-6 -mb-6 p-6 sm:-mx-8 sm:-mb-8 sm:p-8">
+<a class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-primary to-tertiary-container hover:from-primary-container hover:to-tertiary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+            Order Custom Design via WhatsApp
+          </a>
+<p class="font-body-sm text-body-sm text-center text-on-surface-variant mt-2.5">
+            Instant quotation • Dedicated senior graphic director
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: Dynamic Admin Sync Status Bar -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-6 w-full">
+<div class="p-4 rounded-2xl bg-surface-container-lowest/60 backdrop-blur-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold">✦ Live Studio Gallery</strong> • Synced automatically with Firebase Cloud Storage &amp; Firestore.
+        </p>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-Refreshed: Today, 14:32 IST</span>
+<button class="px-3 py-1 rounded-full bg-surface-container-high/70 hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+          Sync
+        </button>
+</div>
+</div>
+</section>
+<!-- Inline Client Interactions Logic -->
+<script>
+    // Category Filtering Logic
+    const categoryTabs = document.querySelectorAll('.cat-pill');
+    const portfolioCards = document.querySelectorAll('.portfolio-item');
+    const searchInput = document.getElementById('gallerySearch');
+    const galleryContainer = document.getElementById('galleryContainer');
+    const viewGrid = document.getElementById('viewGrid');
+    const viewEditorial = document.getElementById('viewEditorial');
+    const lightbox = document.getElementById('lightboxModal');
+
+    let currentCategory = 'all';
+
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        categoryTabs.forEach(t => {
+          t.classList.remove('bg-on-background', 'text-on-primary', 'shadow-md');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-on-background', 'text-on-primary', 'shadow-md');
+        tab.classList.remove('text-on-surface-variant');
+
+        currentCategory = tab.getAttribute('data-cat');
+        filterGallery();
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      filterGallery();
+    });
+
+    function filterGallery() {
+      const query = searchInput.value.toLowerCase().trim();
+
+      portfolioCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const cardTitle = card.getAttribute('data-title').toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cardCat === currentCategory);
+        const matchesQuery = query === '' || cardTitle.includes(query);
+
+        if (matchesCat && matchesQuery) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Layout Switcher
+    viewGrid.addEventListener('click', () => {
+      galleryContainer.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500";
+      viewGrid.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      viewGrid.classList.remove('text-on-surface-variant');
+      viewEditorial.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      viewEditorial.classList.add('text-on-surface-variant');
+    });
+
+    viewEditorial.addEventListener('click', () => {
+      galleryContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-500";
+      viewEditorial.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      viewEditorial.classList.remove('text-on-surface-variant');
+      viewGrid.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      viewGrid.classList.add('text-on-surface-variant');
+    });
+
+    // Lightbox Open & Close
+    window.openModal = function() {
+      lightbox.classList.remove('opacity-0', 'pointer-events-none');
+      const dialog = lightbox.querySelector('div');
+      dialog.classList.remove('scale-95');
+      dialog.classList.add('scale-100');
+    };
+
+    window.closeModal = function() {
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      const dialog = lightbox.querySelector('div');
+      dialog.classList.remove('scale-100');
+      dialog.classList.add('scale-95');
+    };
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeModal();
+      }
+    });
+  </script>
+</div></main><footer class="relative z-10 w-full bg-surface-container-low/70 backdrop-blur-2xl mt-space-xl shadow-[0_-1px_16px_rgba(19,27,46,0.03)]"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter lg:gap-gutter-lg"><div class="md:col-span-6 space-y-space-sm"><div class="flex items-center gap-space-xs"><img alt="SD Pixel Studio Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VTKVXL6HUWye0cwr0DrSH4E7cedwhMbkg4twT_Nyna2T86vtRIM8lNNqfS3_0oUSJsBLTyfKWh4AuujZ68XqR4scsBI8T-a7HNu4eKTpaNAlVNKL56fsKSujQM8ifuJm5S9hXsh3Kjap7WCu3U3RoIZpg6CswJWClhUcgrfRZnCyx6X2Ii7v-CG8TWVFYUTMRlmifSUbWjYpen3OXota5733IiqSir0jM1ITc4nYZ0"/><span class="font-headline-md text-headline-sm text-on-surface font-bold">SD Pixel Studio</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Ethereal digital craft studio delivering bespoke optical interactions, brand experiences, and cutting-edge visual design systems with pristine crystalline precision.</p></div><div class="md:col-span-3 space-y-space-xs"><div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Connect</div><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span>Instagram</a><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">smart_display</span>YouTube</a><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[16px]">forum</span>WhatsApp Channel</a></div></div><div class="md:col-span-3 space-y-space-xs"><div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">Studio Inquiries</div><p class="font-body-sm text-body-sm text-on-surface-variant">Ready to engineer sensory fluid experiences? Let's curate your upcoming digital release.</p><a class="inline-block font-label-md text-label-md text-primary hover:text-primary-container transition-colors" data-path="contact" href="#">hello@sdpixelstudio.com →</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-md text-label-md text-on-surface-variant"><p>© 2025 SD Pixel Studio. All rights reserved. Liquid Glass Creative Arts.</p><div class="flex items-center gap-space-md"><a class="px-3 py-1 rounded-full bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm tracking-wider uppercase transition-colors flex items-center gap-1.5" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[14px]">lock</span>/admin</a></div></div></div></footer></body></html>

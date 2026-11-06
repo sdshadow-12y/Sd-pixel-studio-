@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-tint":"#006398","surface-container-high":"#e2e7ff","on-error":"#ffffff","primary":"#006194","secondary":"#a43073","on-tertiary-container":"#fcfcff","primary-fixed-dim":"#93ccff","on-surface-variant":"#3f4850","outline-variant":"#bfc7d2","secondary-container":"#fc79bd","on-background":"#131b2e","on-primary-fixed":"#001d31","on-error-container":"#93000a","surface-dim":"#d2d9f4","secondary-fixed-dim":"#ffafd3","tertiary-fixed-dim":"#7bd0ff","surface":"#faf8ff","background":"#faf8ff","primary-fixed":"#cce5ff","secondary-fixed":"#ffd8e7","tertiary-fixed":"#c4e7ff","surface-container-low":"#f2f3ff","surface-container-highest":"#dae2fd","on-secondary-fixed-variant":"#85145a","surface-container-lowest":"#ffffff","inverse-on-surface":"#eef0ff","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#004c69","on-secondary":"#ffffff","surface-variant":"#dae2fd","on-secondary-container":"#76014e","on-secondary-fixed":"#3d0026","surface-container":"#eaedff","on-primary":"#ffffff","surface-bright":"#faf8ff","on-tertiary-fixed":"#001e2c","tertiary":"#006387","on-primary-fixed-variant":"#004b73","outline":"#707881","on-primary-container":"#fdfcff","inverse-primary":"#93ccff","error":"#ba1a1a","inverse-surface":"#283044","tertiary-container":"#007da9","primary-container":"#007bb9","error-container":"#ffdad6","on-surface":"#131b2e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1.25rem","margin":"2rem","gutter-lg":"2rem","space-xl":"3.5rem","space-sm":"0.75rem","gutter-sm":"1rem","gutter":"1.5rem","space-xs":"0.375rem","space-lg":"2rem","margin-desktop":"4rem","margin-mobile":"1.25rem"},"fontFamily":{"headline-lg-mobile":["Syne"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Inter"],"label-sm":["Inter"],"body-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-md":["Syne"],"headline-lg":["Syne"],"display-xl-mobile":["Syne"],"headline-sm":["Plus Jakarta Sans"],"display-xl":["Syne"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"headline-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-md":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["48px",{"lineHeight":"54px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-xl-mobile":["40px",{"lineHeight":"46px","letterSpacing":"-0.025em","fontWeight":"800"}],"headline-sm":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-xl":["72px",{"lineHeight":"78px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between p-6"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-2"><div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-[0_8px_20px_-4px_rgba(0,97,148,0.25)]"><span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tighter">SD</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Pixel Studio</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold mt-1">Studio Admin Console</span></div></div><div class="px-3 py-2 rounded-full bg-surface-container-low/60 backdrop-blur-md flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Firestore &amp; Storage Live</span></div><nav class="flex flex-col gap-1.5 pt-2" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_4px_16px_rgba(0,97,148,0.15)]"><a aria-current="page" class="flex items-center gap-3.5 px-4 py-3 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl shadow-[0_4px_16px_rgba(0,97,148,0.15)]" data-path="dashboard-overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Dashboard Overview</a><a class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="portfolio-management" href="#"><span class="material-symbols-outlined text-[20px]">photo_library</span>Portfolio Management</a><a class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="image-upload-suite" href="#"><span class="material-symbols-outlined text-[20px]">cloud_upload</span>Image Upload Suite</a><a class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="category-manager" href="#"><span class="material-symbols-outlined text-[20px]">category</span>Category Manager</a><a class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="website-content-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span>Website Content Settings</a></nav></div><div class="flex flex-col gap-4"><div class="p-3.5 rounded-xl bg-surface-container/60 backdrop-blur-md flex flex-col gap-1.5"><div class="flex items-center gap-1.5 text-primary"><span class="material-symbols-outlined text-[16px]">verified_user</span><span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Authorized Access</span></div><div class="flex flex-col text-on-surface-variant font-label-sm text-label-sm truncate"><span class="truncate" title="debsubhajit356@gmail.com">debsubhajit356@gmail.com</span><span class="truncate" title="sdeb27974@gmail.com">sdeb27974@gmail.com</span></div></div><div class="flex items-center justify-between pt-2 px-1"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-label-md text-label-md text-on-surface font-semibold">Admin</span></div><button class="text-on-surface-variant hover:text-error transition-colors flex items-center justify-center p-1"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/70 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4"><div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low/70 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-label-md text-label-md font-mono">/admin</span></div></div><div class="flex items-center gap-3"><a class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" href="#"><span class="material-symbols-outlined text-[18px]">open_in_new</span>View Live Site</a><a class="px-4 py-2 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-[0_4px_16px_rgba(0,97,148,0.2)] flex items-center gap-2" data-path="image-upload-suite" href="#"><span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>New Upload</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-20 w-full px-8 pb-12 min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Subtle Liquid Light Refraction Blooms in Background Canvas -->
+<div class="relative w-full overflow-hidden pb-16">
+<div class="pointer-events-none absolute -top-24 -left-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl mix-blend-multiply animate-pulse"></div>
+<div class="pointer-events-none absolute top-40 right-10 w-[30rem] h-[30rem] rounded-full bg-secondary-container/20 blur-[100px] mix-blend-screen"></div>
+<div class="pointer-events-none absolute top-[600px] left-1/3 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-[90px]"></div>
+<!-- Top Dashboard Header & Telemetry Bar -->
+<div class="relative z-10 flex flex-col gap-6 pt-4 mb-8">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 bg-surface-container-lowest/60 backdrop-blur-xl p-6 rounded-2xl shadow-sm">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md tracking-tight text-on-surface">Studio Operations &amp; Asset Curation</span>
+<span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/80 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              Superadmin Mode
+            </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+              debsubhajit356@gmail.com
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+              Firebase Firestore &amp; Cloud Storage Synced (12 Nodes Live)
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="font-mono text-label-sm text-label-sm bg-surface-container-low px-2 py-0.5 rounded">gs://sd-pixel-studio.appspot.com</span>
+</div>
+</div>
+<!-- Quick Top Action Buttons -->
+<div class="flex items-center flex-wrap gap-3">
+<button class="px-5 py-2.5 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-[0_10px_25px_-4px_rgba(0,97,148,0.25)] flex items-center gap-2 group" onclick="document.getElementById('upload-suite-section').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">cloud_upload</span>
+            + Quick Upload Design
+          </button>
+<button class="px-4 py-2.5 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-all shadow-sm flex items-center gap-2" id="syncGalleryBtn" onclick="triggerSyncNotification()">
+<span class="material-symbols-outlined text-[18px] text-primary" id="syncIcon">sync</span>
+            Sync Public Gallery
+          </button>
+<a class="px-4 py-2.5 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-all shadow-sm flex items-center gap-1.5" href="#">
+<span class="font-label-lg text-label-lg">View Public Site</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- KPI Metrics Strip: Liquid Glass Refraction Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- Metric 1 -->
+<div class="group relative p-6 rounded-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Total Portfolio Assets</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">307 Works</span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">collections_bookmark</span>
+</div>
+</div>
+<div class="mt-5 flex items-center justify-between pt-3 bg-surface-container-low/40 px-3 py-2 rounded-xl">
+<div class="flex items-center gap-1.5 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+              +14 this week
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">98.4% Published</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="group relative p-6 rounded-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Active Disciplines</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">7 Categories</span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">category</span>
+</div>
+</div>
+<div class="mt-5 flex items-center justify-between pt-3 bg-surface-container-low/40 px-3 py-2 rounded-xl">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Live in Public Nav
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">All Nodes Cached</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="group relative p-6 rounded-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Cloud Storage Usage</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">42.8 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 250 GB</span></span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed/50 flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+</div>
+</div>
+<div class="mt-5 flex flex-col gap-1.5 pt-1">
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-tertiary-container h-full rounded-full" style="width: 17.1%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Firebase CDN bucket active</span>
+<span class="font-semibold text-primary">17.1%</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="group relative p-6 rounded-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Inquiries / Portfolio CTR</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">14.6% <span class="font-body-sm text-body-sm text-on-surface-variant">CTR</span></span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed-dim/40 flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">ads_click</span>
+</div>
+</div>
+<div class="mt-5 flex items-center justify-between pt-3 bg-surface-container-low/40 px-3 py-2 rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span> 350+ Studio Deliveries
+            </span>
+<span class="font-label-sm text-label-sm text-primary">+2.4% MoM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category Visual Pipeline Drawer / Bar -->
+<div class="relative z-10 mb-8 bg-surface-container-lowest/80 backdrop-blur-2xl p-6 rounded-3xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">space_dashboard</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Master Studio Disciplines</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time category organization synced to public portfolio tabs.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-all flex items-center gap-1.5 shadow-sm" onclick="openCategoryModal()">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+            Add New Discipline
+          </button>
+</div>
+</div>
+<!-- Categories Visual Horizontal Scroll / Flow Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+<!-- Cat 1 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Luxurious golden royal wedding invitation on ivory paper with gold foil floral typography and soft romantic studio lighting in pastel hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOpakzF2-BduKSsl0YEqtf4sIHa2hWumuTtvIdL3XvCOEtI4ST-B8lfEbemKQXHFh9guPoIsF2WgxzT5eSOZNoufc6MrlekA9ZjgpiER-XXrREEtV0-fUyhUHQEWmYCWvNx4xqnJ3-bNs4k-csK_bHhysEbt9E-bclcrdffMCvZZ1JuXulCSGpxbi34y7oz7zYaxrdVGo7cOyJJqBIHmj3SqfgjCHX-XO5URgBZh4"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">58</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Wedding Invitations</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">48h Expedited</span>
+</div>
+</div>
+<!-- Cat 2 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern neon gaming mascot logo featuring an armored cybernetic wolf in vivid cyan and electric magenta against soft studio dark glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9rcGrC5TU-onsOkhuqbg9tZb1RVXAGHpERjyEkkf3D5kxtCYASt1L9oHi4ZKyjh2cTk6xEBzfeB-bG18LWW8-CaEq5OGaaApwY9uT2tzAPgXMHdc8RxZhoFK6HmlQzyzuZXnJPi5D4FEKX8BCG5S-gxPCDc8ps0QhOBnAvX9WRBdXRTQrxqC5GFZx01ygwVdFWCSZftTkqBGi3gR-rfnAMXUhU3IJS0KMFE3pTCg"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">44</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Gaming Logo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Twitch &amp; Kick</span>
+</div>
+</div>
+<!-- Cat 3 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist corporate business monogram branding on premium textured stationary card with deep ocean blue foil stamp emboss" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBGpKTn2fU1PDRS8E_7edmFsJ9tauo7XtpUxPxefuZ3b-3zs5T1-aRKkL3DuyF7pru2X3ulVkIeqDbbZmkMMg6s1JvUc0oOVcElsFsLySAAqCI9NeaETFf3HfLob5YC1GJN0F-ynl3wVv0cGAfuwBgaeISAy2GT1Qsw8B1RqiMEyrQ5ihej_jq089o_yXb_0P0WgqP4QtrewKhDn_WTZ7OXHRxs6Muoo2f0XQW-ls"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">62</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Business Logo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Identity Suites</span>
+</div>
+</div>
+<!-- Cat 4 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High energy YouTube thumbnail graphic showing extreme contrast lighting, cinematic 3D bold text typography, and vibrant dramatic expressions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXeNDYrk_v4yUoYX77wwgXpGNw0EbkAasStXbexRq7SyRE2vi2XQh4Gire7hmNqOO7L6tsF_QeD8Nc6tv3Szj2EKM57GFCwVdkbuR2MtEzNmx1ZBx_0pjyktUk6nIj3tA12Ubcg9AKMGlZauwvkn18a5wSVP_TxCuxJFCC_UE9HTlwIdtwawIkFP0q-jGSLqkruSjqxHCa0lZZKHoQt88tZLUPqDpYaImgFUR94cA"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">51</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">YouTube Thumbnail</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CTR Optimized</span>
+</div>
+</div>
+<!-- Cat 5 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Elegant pastel birthday event announcement card with refined rose gold calligraphy and delicate botanical illustrations on textured cardstock" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFA7aDtnHBRe_tc9tI_YxHupZL8W5a73T1r9zKY-Y0fo4FsG8Ba4swXljKvCSiTrUQBlNmV65_eFZIut_ZevkmLd0rACH3hvwcf6wjBYSkd0EpvkgHGOIJ5T91hyCrMrKQLtuyXjjO2e8l-UDo3QLwXNo6IruOapdamYkpdyhHc6QuC_5kQoX_rTv-dULMW7AVDaOWAOMzRPeOQnzlR2UB71vRsCI2p8Mi5varr7Y"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">33</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Birthday Suites</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Theme Keepsakes</span>
+</div>
+</div>
+<!-- Cat 6 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Intimate engagement save the date invitation card with minimalist modern typography and clean photographic framed border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrBBQz0KFeKEdnseU-lkMFjIpWoBW6BFS96EU3j5trqP5etunTPa2F6o_FZl7IUM5uw0MOqX0aUcmLLNFrUberUeJEJHZcN3qDIWXXEaZ9bXbinb-Wc-GOPPpYeDkvLrx4p6TlLa2HukEplojAHOlF42WoCay1WYVy6eZtMQh15u9Iad_41zzaqT1iF4PUtuV7RusIIxUaP0SkzawRg5-0-vnkyyf5MUI4AispW0"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">29</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Engagement</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Save The Date</span>
+</div>
+</div>
+<!-- Cat 7 -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-low/60 hover:bg-surface-container-lowest transition-all duration-200 flex flex-col justify-between">
+<div class="relative w-full h-20 rounded-xl overflow-hidden mb-2">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Warm modern Indian Griha Pravesh and house warming invitation suite with saffron accents, marigold motifs, and contemporary serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA7wC9MYQ_gnmacISPs4IhKlTAl-uSJ7kbbfZCCCrs5yD0QbgqpI1LF0naIlS48TWqt4f5i8ZbFrnORqQL5XU_x2qEnrS0FbqcZCaxkiVXBB9oEaoeScIQxMgZV3GMBmI2XTyfI2yj-RNBNnnuldQMPRMIP7q4uzeAhK7K9FBAt-brUNUlyBjA6TC5RCrRtUliFOG_wK2Qhir9xuR_4hCX4bdky2gS3Nr7YyjBtwQ"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur">30</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">House Warming</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Griha Pravesh</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Direct Asset Deployment Suite (Interactive Upload Center) -->
+<div class="relative z-10 mb-10 bg-surface-container-lowest/90 backdrop-blur-2xl p-8 rounded-3xl shadow-sm" id="upload-suite-section">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-6 gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-widest font-bold">
+<span class="material-symbols-outlined text-[16px]">cloud_upload</span>
+            Workstation Asset Pipeline
+          </div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Direct Asset Deployment to Firebase Storage</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Upload master renders directly from workstation or mobile. Auto-populates public category portfolios instantaneously.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1.5 rounded-full bg-surface-container-high/60 text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Cloud Auto-Optimization: Active (WebP @ 92)
+          </span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Dropzone -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<div class="relative group rounded-3xl bg-surface-container-low/40 p-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-surface-container-high/50 cursor-pointer min-h-[340px]" id="drop-area">
+<input accept="image/*,video/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20" id="fileInput" type="file"/>
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest shadow-md flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Drop High-Res 4K Renders</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-5">Accepts master PNG, lossless WEBP, vector SVG, or motion MP4 mockups.</p>
+<div class="flex flex-wrap justify-center gap-2 mb-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">PNG 4K</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">WEBP</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">SVG</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">MP4 60FPS</span>
+</div>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm hover:shadow transition-all pointer-events-none" type="button">
+              Browse Device Files
+            </button>
+</div>
+<!-- Staged / Staging Preview Status Box -->
+<div class="p-4 rounded-2xl bg-surface-container-low/50 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">folder_zip</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">royal_rajputana_foil_master_4k.webp</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14.2 MB · Computed SHA-256 Validated</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">STAGED</span>
+</div>
+</div>
+<!-- Right: Metadata Input Form -->
+<div class="lg:col-span-7 flex flex-col gap-5">
+<form class="flex flex-col gap-5" id="uploadForm" onsubmit="event.preventDefault(); simulatePublish();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Work Title -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Work / Artwork Title</label>
+<input class="px-4 py-3 rounded-xl bg-surface-container-low/60 text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="e.g., Luxury Crest Invitation" required="" type="text" value="Royal Rajputana Gold Foil Suite"/>
+</div>
+<!-- Target Category -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Target Portfolio Discipline</label>
+<select class="px-4 py-3 rounded-xl bg-surface-container-low/60 text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer">
+<option selected="">Wedding Invitations</option>
+<option>Gaming Logo</option>
+<option>Business Logo</option>
+<option>YouTube Thumbnail</option>
+<option>Birthday Event Suite</option>
+<option>Engagement / Save The Date</option>
+<option>House Warming (Griha Pravesh)</option>
+<option disabled="">──────────</option>
+<option>+ Create New Discipline...</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Client Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Client / Commissioned Brand</label>
+<input class="px-4 py-3 rounded-xl bg-surface-container-low/60 text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="e.g., Warner Records, Apex Guild" type="text" value="Kapoor &amp; Singhania Heritage"/>
+</div>
+<!-- Aspect Ratio Selection -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Render Ratio / Display Grid Target</label>
+<div class="grid grid-cols-4 gap-2 pt-0.5">
+<button class="py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all" type="button">16:9 Wide</button>
+<button class="py-2.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm" type="button">1:1 Square</button>
+<button class="py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all" type="button">4:5 Vert</button>
+<button class="py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all" type="button">3:2 Print</button>
+</div>
+</div>
+</div>
+<!-- Description / Visual Brief -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Tagline / Visual Specifications Description</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Markdown supported</span>
+</div>
+<textarea class="px-4 py-3 rounded-xl bg-surface-container-low/60 text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline resize-none" placeholder="Describe foil finishes, resolution techniques, typography pairing, and client highlights..." rows="3">Handcrafted custom monograms blended with 24K gold foil debossing effects. Commissioned for destination nuptials in Udaipur. Features bilingual Sanskrit shlokas and modern bespoke typography.</textarea>
+</div>
+<!-- Publication Status Toggle & Deploy Button -->
+<div class="pt-3 flex flex-col sm:flex-row items-center justify-between gap-4 bg-surface-container-low/30 p-4 rounded-2xl">
+<div class="flex items-center gap-3">
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="pubStatus" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Publish Live Instantly</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Toggle off to save as Private Client Proof</span>
+</div>
+</div>
+<button class="w-full sm:w-auto px-7 py-3 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold transition-all shadow-[0_10px_25px_-4px_rgba(0,97,148,0.3)] flex items-center justify-center gap-2" id="deployBtn" type="submit">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Deploy to Studio CDN</span>
+</button>
+</div>
+<!-- Upload Pipeline Feedback Bar -->
+<div class="hidden flex flex-col gap-2 p-3 bg-surface-container-high/60 rounded-xl" id="uploadFeedback">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span>
+                  Packaging asset &amp; computing perceptual hash...
+                </span>
+<span class="font-mono text-on-surface font-bold" id="uploadPercent">100% Synced</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-700 w-full"></div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Live Portfolio Inventory & Management Data Surface -->
+<div class="relative z-10 bg-surface-container-lowest/80 backdrop-blur-2xl p-6 sm:p-8 rounded-3xl shadow-sm flex flex-col gap-6">
+<!-- Toolbar Header -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">auto_stories</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Live Portfolio Inventory</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage indexing, visibility toggles, metadata changes, and client deliverables.</p>
+</div>
+<!-- Filter, Search, and Batch Operations -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Search Glass Capsule -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-3 pointer-events-none">search</span>
+<input class="pl-9 pr-4 py-2 rounded-full bg-surface-container-low/70 text-on-surface font-label-md text-label-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all w-52 sm:w-64 placeholder:text-outline" id="inventorySearch" onkeyup="filterInventoryTable()" placeholder="Search title or client..." type="text"/>
+</div>
+<!-- Category Filter Pill -->
+<select class="px-4 py-2 rounded-full bg-surface-container-low/70 text-on-surface font-label-md text-label-md focus:outline-none transition-all cursor-pointer" id="categoryFilter" onchange="filterInventoryTable()">
+<option value="ALL">All Categories (307)</option>
+<option value="Wedding Invitation">Wedding Invitation</option>
+<option value="Gaming Logo">Gaming Logo</option>
+<option value="Business Logo">Business Logo</option>
+<option value="YouTube Thumbnail">YouTube Thumbnail</option>
+<option value="Artisan Cafe">Branding Suites</option>
+</select>
+<!-- Batch Action Trigger -->
+<div class="flex items-center gap-1.5 bg-surface-container-low/50 px-2 py-1 rounded-full">
+<button class="p-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="batchAction('publish')" title="Batch Publish">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+</button>
+<button class="p-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="batchAction('unpublish')" title="Batch Unpublish / Draft">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</button>
+<button class="p-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="batchAction('delete')" title="Batch Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inventory Data Table -->
+<div class="overflow-x-auto -mx-6 sm:mx-0">
+<table class="w-full text-left border-collapse min-w-[760px]" id="inventoryTable">
+<thead>
+<tr class="bg-surface-container-low/50 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant rounded-xl">
+<th class="py-3 px-4 rounded-l-xl w-10">
+<input class="rounded cursor-pointer" id="selectAllCheckbox" onchange="toggleSelectAll()" type="checkbox"/>
+</th>
+<th class="py-3 px-4">Artwork &amp; Specifications</th>
+<th class="py-3 px-4">Discipline</th>
+<th class="py-3 px-4">Client / Brand</th>
+<th class="py-3 px-4">Performance</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 rounded-r-xl text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 px-4">
+<input class="row-checkbox rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Close up photograph of Royal Celestial Wedding Invitation Suite with intricate golden stars and sapphire velvet envelope backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEAXRtmz-Sw9XUs_6uemyvOye9HIO-LwoAZIpidgI9RfJ-zpxb3UhM08C70ozjubb3q7_hN4KILw2LLRWChRGa_9XRJjh6LS7rn4eNikum8VCJE3wsSdmsVmiU7l1Vm8AT1JWSpRVXkgCOolmkYiQQv4QogTxrmpn_aUlrBq5YO2QmOGhnaOph_TmrTPJHhSMsUevwhs1xFlQsxhtKVh5v_TQ4wxmPFKsaYgdqAFI"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Royal Celestial Wedding Invitation Suite</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4K Master • 1:1 Square • 48h Turnaround</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">Wedding Invitation</span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">Kapoor &amp; Singhania</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span> 4,120 Views
+                  </span>
+<span class="font-label-sm text-label-sm text-primary">18.4% Inquiry Conversion</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Published
+                </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Royal Celestial Wedding Invitation Suite')" title="Edit Metadata">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="toggleRowVisibility(this)" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="triggerRowDelete('Royal Celestial Wedding Invitation Suite')" title="Remove Asset">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 px-4">
+<input class="row-checkbox rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Dynamic esports emblem mascot of Aetheria armored cyber phoenix with glowing electric wings and razor sharp vector outlines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsENZ3MmWhUrCOwkw4MT1INUgtPxZcMxzyf8iY_Rx-GhXwVbdZsrLJlvwdOw6gjnBR9IIaFjs9-e6Nl2NQkrGtz5iZeE8QSCBb84NxLZZruFs7V3q_3jR5z9cESGGyF3hQepgci3MOVuSK_v6lRr6ifa24Kf5za7TR3PYxEmAieW6JGdUqiDmcFNcfVSq9Kj6nXpGclaI-Gq8A6NaD23u2VJOWgcIvsLVrvfcaoZ8"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Aetheria Esports Mascot Emblem</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vector AI + SVG • Twitch &amp; Kick Pack</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm font-semibold">Gaming Logo</span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">Aetheria Clan North</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span> 2,890 Views
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Used in Live Stream</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Published
+                </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Aetheria Esports Mascot Emblem')" title="Edit Metadata">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="toggleRowVisibility(this)" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="triggerRowDelete('Aetheria Esports Mascot Emblem')" title="Remove Asset">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 px-4">
+<input class="row-checkbox rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Refined Nexify corporate identity mark on architectural concrete wall with precision metallic shadow and clean geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhfFA1OlEOrEzSHZcpcklC0BghE3h0y8AJyhF8jBx-tBUrVxQf1gOBwr-3RLaQnOrfWLj41pF3L2Q78SKvx2t_lEtk0nuCJOMkrjd7dWDfMmL29dTFnxnLJec0po_SirGNhuBV88PdjhyuxViKztPHd-NQ2r8dqnk5pzSaIjZ8qY72nwnjUvNSrRb-8ALRsjzWNqH-sJQa7Q0vTaIYp70SHkgxsfGcqVf_jltUoeA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Nexify Financial Brand System</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Full Brand Guidelines • 16:9 Deck</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Business Logo</span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">Nexify Capital Ltd.</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span> 3,450 Views
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Flagship Case Study</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Published
+                </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Nexify Financial Brand System')" title="Edit Metadata">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="toggleRowVisibility(this)" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="triggerRowDelete('Nexify Financial Brand System')" title="Remove Asset">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-4 px-4">
+<input class="row-checkbox rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="High stakes YouTube thumbnail graphic with $1,000,000 Escape Island typography, hyper realistic saturation, and intense dynamic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeeBzRSsczw4tiSDvIWpFhxrWcP_uI-yrYwxuYAYNkiqyqUoxdAVK9Snpsq1CKOOHAhpTKcTJlfzQHm_FXpPctygJhTn72bwBAy-r6fE0vadn8cwq9SJzMHtHZK9CGzXQ34AB7MAgZklw7RXy61F0GPSVU4QQGsLEu18BsJaGpBf9guPlpCWan70ww1-Rb-KVAG8uoOsFxgSheLE77Nb7O2zefLqxQACcc86BTSTw"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">$1,000,000 Escape Island Challenge Asset</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">16:9 Thumbnail • 21.2% CTR Verified</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm font-semibold">YouTube Thumbnail</span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">Beast Realm Network</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span> 9,800 Views
+                  </span>
+<span class="font-label-sm text-label-sm text-primary font-bold">21.2% CTR Metric</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Published
+                </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('$1,000,000 Escape Island Challenge Asset')" title="Edit Metadata">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="toggleRowVisibility(this)" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="triggerRowDelete('$1,000,000 Escape Island Challenge Asset')" title="Remove Asset">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 (Draft State) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group opacity-85">
+<td class="py-4 px-4">
+<input class="row-checkbox rounded cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shadow-sm flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Artisanal Japanese style cafe identity packaging with minimalist stamp logo on kraft recycled coffee bean bag and ceramic mug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBFh9ZMK3kJPng2WesFSNAkw3ZU5ZJ30WXzlnggMUcUJQOms8QFdZyVKo01CdDmaO1815fsFQz2ksSkew4YQjEvDm4wi3juWU2jVKDAtcNwK1tb9D_Rx22kAitKQ9nRUNCx5uNR3HhkjX-zzz3QA5c72dPo5ZA89PcSH0IYEdhVAH4CRzd2j4KVLaPqXWtUpRse2VrqtWCjeDCD_lZsg2aYXqV2vxQgKKxSZtm5GI"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Komorebi Artisan Cafe Branding</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Proof Pending Approval • 4:5 Vertical</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Artisan Cafe</span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">Komorebi Roasters Tokyo</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility_off</span> Private Proof
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Review Link Active</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Draft / Proof
+                </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Komorebi Artisan Cafe Branding')" title="Edit Metadata">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all" onclick="toggleRowVisibility(this)" title="Toggle Visibility">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-all" onclick="triggerRowDelete('Komorebi Artisan Cafe Branding')" title="Remove Asset">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Inventory Footer -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pt-4 gap-4 bg-surface-container-low/20 p-3 rounded-2xl">
+<span class="font-label-md text-label-md text-on-surface-variant">Showing 1 to 5 of 307 Studio Works across 7 Disciplines</span>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md disabled:opacity-40" disabled="">Previous</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">62</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 1: Edit Asset Metadata Modal (Glass Floating Sheet) -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="editModal">
+<div class="w-full max-w-xl rounded-3xl bg-surface-container-lowest/95 backdrop-blur-2xl p-7 shadow-2xl flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Edit Asset Metadata</h3>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" onclick="closeEditModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Asset Title</label>
+<input class="px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20" id="editModalTitle" type="text" value=""/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Discipline</label>
+<select class="px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none">
+<option>Wedding Invitation</option>
+<option>Gaming Logo</option>
+<option>Business Logo</option>
+<option>YouTube Thumbnail</option>
+<option>Birthday Event</option>
+<option>Engagement</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Client Reference</label>
+<input class="px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="Client Brand Records"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Replace Master Render (Optional)</label>
+<div class="p-4 rounded-xl bg-surface-container-low/50 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Choose updated high-resolution render</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm" type="button">Replace File</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3">
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="closeEditModal()">Cancel</button>
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-md" onclick="saveEditMetadata()">Save &amp; Update CDN</button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 2: Delete Confirmation Modal -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="deleteModal">
+<div class="w-full max-w-md rounded-3xl bg-surface-container-lowest/95 backdrop-blur-2xl p-6 shadow-2xl flex flex-col gap-4">
+<div class="w-12 h-12 rounded-2xl bg-error-container/60 text-error flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[26px]">warning</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Remove Asset from Portfolio?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="deleteTargetText">Are you sure you want to delete this asset? This action will purge the file from Firebase Storage and remove it from public indexing.</p>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="closeDeleteModal()">Cancel</button>
+<button class="px-5 py-2 rounded-full bg-error text-on-error font-label-md text-label-md font-semibold shadow-sm" onclick="confirmAssetDelete()">Confirm Delete</button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 3: Add Discipline Modal -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="categoryModal">
+<div class="w-full max-w-md rounded-3xl bg-surface-container-lowest/95 backdrop-blur-2xl p-6 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Add Studio Discipline</h4>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeCategoryModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Discipline Name</label>
+<input class="px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none" id="newCategoryName" placeholder="e.g., 3D Architectural Renders" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Public URL Slug</label>
+<input class="px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none" placeholder="/portfolio/3d-architectural" type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3">
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="closeCategoryModal()">Dismiss</button>
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold" onclick="saveNewCategory()">Create Discipline</button>
+</div>
+</div>
+</div>
+<!-- Interactive Toast Notification -->
+<div class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-2xl" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[22px]" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Studio gallery refreshed successfully.</span>
+</div>
+</div>
+<script>
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const msg = document.getElementById('toastMessage');
+    const ico = document.getElementById('toastIcon');
+    if (!toast || !msg) return;
+    msg.textContent = message;
+    ico.textContent = icon;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+
+  function triggerSyncNotification() {
+    const icon = document.getElementById('syncIcon');
+    if (icon) icon.classList.add('animate-spin');
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      showToast('Firebase Firestore indices recomputed & gallery synced!', 'cloud_done');
+    }, 900);
+  }
+
+  function simulatePublish() {
+    const feedback = document.getElementById('uploadFeedback');
+    const deployBtn = document.getElementById('deployBtn');
+    if (!feedback) return;
+    feedback.classList.remove('hidden');
+    deployBtn.disabled = true;
+    deployBtn.classList.add('opacity-50');
+
+    setTimeout(() => {
+      showToast('Asset deployed live to Firebase bucket & category gallery!', 'verified');
+      deployBtn.disabled = false;
+      deployBtn.classList.remove('opacity-50');
+      feedback.classList.add('hidden');
+    }, 1200);
+  }
+
+  let activeDeleteTarget = '';
+  function triggerRowDelete(title) {
+    activeDeleteTarget = title;
+    const modal = document.getElementById('deleteModal');
+    const text = document.getElementById('deleteTargetText');
+    if (text) text.textContent = `Are you sure you want to delete "${title}"? This action will purge the master file from Firebase Storage.`;
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function confirmAssetDelete() {
+    closeDeleteModal();
+    showToast(`"${activeDeleteTarget}" removed from live inventory.`, 'delete_forever');
+  }
+
+  function openEditModal(title) {
+    const modal = document.getElementById('editModal');
+    const titleInput = document.getElementById('editModalTitle');
+    if (titleInput) titleInput.value = title;
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeEditModal() {
+    const modal = document.getElementById('editModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function saveEditMetadata() {
+    closeEditModal();
+    showToast('Asset metadata and CDN cache tags updated!', 'save');
+  }
+
+  function toggleRowVisibility(button) {
+    const icon = button.querySelector('.material-symbols-outlined');
+    if (icon) {
+      if (icon.textContent === 'visibility') {
+        icon.textContent = 'visibility_off';
+        showToast('Work visibility changed to Private Draft.', 'visibility_off');
+      } else {
+        icon.textContent = 'visibility';
+        showToast('Work published to Live Public Gallery!', 'visibility');
+      }
+    }
+  }
+
+  function openCategoryModal() {
+    const modal = document.getElementById('categoryModal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeCategoryModal() {
+    const modal = document.getElementById('categoryModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function saveNewCategory() {
+    const input = document.getElementById('newCategoryName');
+    const val = input ? input.value : '';
+    closeCategoryModal();
+    showToast(val ? `New discipline "${val}" initialized in database.` : 'New discipline successfully added to studio navigation.');
+  }
+
+  function toggleSelectAll() {
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const checkboxes = document.querySelectorAll('.row-checkbox');
+    if (selectAll) {
+      checkboxes.forEach(cb => { cb.checked = selectAll.checked; });
+    }
+  }
+
+  function batchAction(action) {
+    const checkboxes = document.querySelectorAll('.row-checkbox:checked');
+    if (checkboxes.length === 0) {
+      showToast('Select one or more assets to perform batch actions.', 'info');
+      return;
+    }
+    showToast(`Batch operation (${action}) executed for ${checkboxes.length} items.`, 'checklist');
+  }
+
+  function filterInventoryTable() {
+    const searchVal = (document.getElementById('inventorySearch')?.value || '').toLowerCase();
+    const catVal = document.getElementById('categoryFilter')?.value || 'ALL';
+    const rows = document.querySelectorAll('#inventoryTable tbody tr');
+
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      const matchesSearch = text.includes(searchVal);
+      const matchesCat = catVal === 'ALL' || text.includes(catVal.toLowerCase());
+      row.style.display = matchesSearch && matchesCat ? '' : 'none';
+    });
+  }
+
+  // File drag state micro-interaction
+  const dropArea = document.getElementById('drop-area');
+  const fileInput = document.getElementById('fileInput');
+  if (dropArea && fileInput) {
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropArea.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropArea.classList.add('bg-primary-fixed/30');
+      });
+    });
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropArea.classList.remove('bg-primary-fixed/30');
+      });
+    });
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files[0]) {
+        showToast(`Staged file: ${fileInput.files[0].name} (Ready to deploy)`, 'upload');
+      }
+    });
+  }
+</script></main></div></body></html>
